@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="dashboard.css">
+    <title>Healthcare Dashboard</title>
+</head>
+<body>
+    <div class="wrapper">
+       
+        <div class="container">
+            <div class="content">
+                <div class="tabs-container">
+                    <div class="left-side">
+                        <div class="input-group">
+                            <label for="memberFilter">Household Member:</label>
+                            <select id="memberFilter" name="memberID" onchange="filterByMember()" required>
+                                <option value="">Select Member</option>
+                                <!-- Hard-coded options for testing -->
+                                <option value="1">John Doe</option>
+                                <option value="2">Jane Doe</option>
+                            </select>
+                        </div>
+                        <div class="tabs">
+                            <button class="tablinks" onclick="openTab(event, 'Prescriptions')">Prescriptions</button>
+                            <button class="tablinks" onclick="openTab(event, 'SelfDiagnosis')">Self Diagnosis</button>
+                            <button class="tablinks" onclick="openTab(event, 'HealthFAQs')">Health FAQs</button>
+                            <button class="tablinks" onclick="openTab(event, 'Requests')">Requests/Issues</button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div id="Prescriptions" class="tabcontent">
+                            <!-- Placeholder content for prescriptions -->
+                            <h2>Prescriptions</h2>
+                            <p>This section is under development.</p>
+                        </div>
+                        <div id="SelfDiagnosis" class="tabcontent">
+                            <!-- Placeholder content for self-diagnosis -->
+                            <h2>Self Diagnosis</h2>
+                            <p>This section is under development.</p>
+                        </div>
+                        <div id="HealthFAQs" class="tabcontent">
+                            <!-- Placeholder content for health FAQs -->
+                            <h2>Health FAQs</h2>
+                            <p>This section is under development.</p>
+                        </div>
+                        <div id="Requests" class="tabcontent">
+                            <!-- Placeholder content for requests/issues -->
+                            <h2>Requests/Issues</h2>
+                            <p>This section is under development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function filterByMember() {
+            const selectedMember = document.getElementById('memberFilter').value;
+            // Implement functionality to filter content based on selected member
+            console.log("Selected Member ID: " + selectedMember);
+        }
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Automatically open the first tab by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tablinks').click();
+        });
+    </script>
+</body>
+</html>
