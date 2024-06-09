@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Will/Documents/synoptic/database/communityHealth.db" readonly="0" foreign_keys="" case_sensitive_like="" temp_store="" wal_autocheckpoint="" synchronous=""/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="250"/><column_width id="3" width="7271"/><column_width id="4" width="0"/></tab_structure><tab_browse><current_table name="0,0:"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1"></sql><sql name="Edit View HouseholdProfiles">DROP VIEW &quot;main&quot;.&quot;HouseholdProfiles&quot;;
+CREATE VIEW HouseholdProfiles AS
+SELECT
+    p.profile_id,
+    p.household_id,
+    p.first_name,
+    p.last_name,
+    p.date_of_birth,
+    p.sex,
+    p.profile_pin,
+    h.household_name,
+    h.mobile_number
+FROM Profiles p
+JOIN Households h ON p.household_id = h.household_id</sql><current_tab id="1"/></tab_sql></sqlb_project>
