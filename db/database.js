@@ -36,7 +36,7 @@ const verifyPin = (profileId, pin, callback) => {
     if (err) {
       callback(err, false);
     } else {
-      callback(null, !!row); // Return true if row exists, false otherwise
+      callback(null, !!row);
     }
   });
 };

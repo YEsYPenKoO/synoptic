@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
 
-router.get('/', (req, res) => { // Changed from '/dashboard' to '/'
+router.get('/', (req, res) => {
     const profileId = req.query.profile_id;
 
     db.getProfileById(profileId, (err, profile) => {
