@@ -22,13 +22,15 @@ const getProfileById = (profileId, callback) => {
 
 const getPrescriptions = (profileId, callback) => {
   const query = `
-  SELECT medication_name, dosage, frequency, start_date, end_date
-  FROM Prescriptions
-  WHERE profile_id = ?`;
+      SELECT prescription_id, medication_name, dosage, frequency, start_date, end_date
+      FROM Prescriptions
+      WHERE profile_id = ?
+  `;
   db.all(query, [profileId], (err, rows) => {
-    callback(err, rows);
+      callback(err, rows);
   });
 };
+
 
 const verifyPin = (profileId, pin, callback) => {
   const query = 'SELECT 1 FROM Profiles WHERE profile_id = ? AND profile_pin = ?';
@@ -55,11 +57,23 @@ const authenticateHousehold = (mobileNumber, familyPassword, callback) => {
   });
 };
 
+// Function to add a prescription request to the database
+const addPrescriptionRequest = (profileId, prescriptionId, callback) => {
+  const query = `
+      INSERT INTO RequestPrescriptions (profile_id, prescription_id, date_requested)
+      VALUES (?, ?, CURRENT_TIMESTAMP)
+  `;
+  db.run(query, [profileId, prescriptionId], (err) => {
+      callback(err);
+  });
+};
+
 module.exports = {
   getProfiles,
   getProfileById,
   getPrescriptions,
   verifyPin,
   getProfilesByHousehold,
-  authenticateHousehold
+  authenticateHousehold,
+  addPrescriptionRequest
 };

@@ -118,12 +118,14 @@ body, html {
     background-color: black;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increased padding for larger size */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px; /* Increased border radius for a smoother appearance */
     transition: background-color 0.3s ease;
+    font-size: 18px; /* Increased font size for better visibility */
+    font-weight: bold; /* Bold font weight for emphasis */
 }
 
 .tabcontent button:hover {
-    background-color: grey;
+    background-color: #333; /* Darker background color on hover for further emphasis */
 }

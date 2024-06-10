@@ -25,25 +25,22 @@
                     <div id="Prescriptions" class="tabcontent">
                         <h2>Why are you taking medications?</h2>
                         <ul>
-                            <li>Doctors prescribed them to help with different health problems.</li>
-                            <li>Each medicine targets a specific issue in your body.</li>
-                            <li>They ensure you stay healthy and feel better.</li>
+                            <li>&#8226; Doctors prescribed them to help with different health problems.</li>
+                            <li>&#8226; Each medicine targets a specific issue in your body.</li>
+                            <li>&#8226; They ensure you stay healthy and feel better.</li>
                         </ul>
-                        <h3>Things to Note about Medication</h3>
+                        <h2>Things to Note about Medication</h2>
+                        
                         <ul>
-                            <% prescriptions.forEach(prescription => { %>
-                            <li><strong>Medicine:</strong> <%= prescription.medication_name %></li>
-                          
-                            <% }); %>
-                        </ul>
-                        <ul>
-                            <li>You will get more detail on your medication like dosage, frequency, and duration.</li>
-                            <li>Possible side effects will be listed to help you understand what to expect.</li>
-                            <li>Understanding these details will empower you to manage your health effectively.</li>
+                            <li>&#8226; You will get more detail on your medication like dosage, frequency, and duration.</li>
+                            <li>&#8226; Possible side effects will be listed to help you understand what to expect.</li>
+                            <li>&#8226; Understanding these details will empower you to manage your health effectively.</li>
                         </ul>
                         <p>Learn more about your medications and how they can help you manage your health effectively.</p>
-                        <button onclick="location.href='prescriptions.ejs'">View Detailed Prescriptions</button>
+                        <button onclick="location.href='/prescription'">View Prescriptions</button>
+
                     </div>
+                    
                                         <div id="SelfDiagnosis" class="tabcontent">
                         <h2>Self Diagnosis Tools</h2>
                         <p>Explore tools to identify symptoms and learn about preventive measures.</p>
