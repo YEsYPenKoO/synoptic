@@ -174,14 +174,18 @@
 </head>
 <body>
     <div class="profile-selection">
-        <h1 class="glowing-text">Choose Your Profile</h1>
-        <div class="profile-icons">
-            <% profiles.forEach(profile => { %>
-            <div class="profile-icon" onclick="showPasswordPrompt('<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
-                <p><%= profile.first_name %> <%= profile.last_name %></p>
-            </div>
-            <% }); %>
+    <h1 class="glowing-text">Choose Your Profile</h1>
+    <div class="profile-icons">
+        <% profiles.forEach(profile => { %>
+        <div class="profile-icon" onclick="showPasswordPrompt('<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
+            <p><%= profile.first_name %> <%= profile.last_name %></p>
         </div>
+        <% }); %>
+        <!-- Button for adding a new profile -->
+        <a href="/chooseaccount/add-profile" class="profile-icon" style="cursor:pointer;">
+            <p>+</p>
+        </a>
+    </div>
         <div class="pin-pad" id="passwordPrompt">
             <div class="pin-pad-text">Enter PIN:</div>
             <div class="pin-pad-row" id="passwordDots">

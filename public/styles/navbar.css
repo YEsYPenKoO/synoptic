@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+}
+
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1e3a5f; /* Darker blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Space items evenly */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    padding: 14px 16px;
+    font-size: 14px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.navbar-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%); /* White color */
+    transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.navbar-name {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.navbar-item a:hover {
+    background-color: #3e5b84; /* Slightly lighter blue on hover */
+    border-radius: 5px;
+    color: #ffd700; /* Gold text on hover */
+}
+
+.navbar-item a:hover .navbar-icon {
+    filter: invert(86%) sepia(67%) saturate(659%) hue-rotate(1deg) brightness(105%) contrast(103%); /* Gold color on hover */
+}
+
+/* Add padding to the body to avoid content being hidden under the navbar */
+body {
+    padding-top: 60px; /* Adjust based on the navbar height */
+}
