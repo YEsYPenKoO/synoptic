@@ -68,6 +68,13 @@ const addPrescriptionRequest = (profileId, prescriptionId, callback) => {
   });
 };
 
+const addProfile = (firstname, surname, dateOfBirth, sex, pin, householdId, callback) => {
+  const query = 'INSERT INTO Profiles (first_name, last_name, date_of_birth, sex, profile_pin, household_id) VALUES (?, ?, ?, ?, ?, ?)';
+  db.run(query, [firstname, surname, dateOfBirth, sex, pin, householdId], (err) => {
+      callback(err);
+  });
+};
+
 module.exports = {
   getProfiles,
   getProfileById,
@@ -75,5 +82,6 @@ module.exports = {
   verifyPin,
   getProfilesByHousehold,
   authenticateHousehold,
-  addPrescriptionRequest
+  addPrescriptionRequest,
+  addProfile
 };

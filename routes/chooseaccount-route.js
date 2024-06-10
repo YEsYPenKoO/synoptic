@@ -2,23 +2,18 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
 
+// Route to render the chooseaccount page with the list of profiles
 router.get('/', (req, res) => {
-    const householdId = req.session.householdId; 
-
+    const householdId = req.session.householdId;
     db.getProfilesByHousehold(householdId, (err, profiles) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Internal Server Error');
         }
-
-        if (!profiles || profiles.length === 0) {
-           
-            return res.status(404).send('No profiles found for this household');
-        }
-
-        res.render('chooseaccount', { profiles }); 
+        res.render('chooseaccount', { profiles });
     });
 });
+
 
 router.get('/check-pin', (req, res) => {
     console.log('check-pin route hit');
