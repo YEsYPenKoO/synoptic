@@ -119,8 +119,8 @@ input[type=button]:hover{
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
-    font-size: 14px
-    font
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .form__link:hover {
