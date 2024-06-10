@@ -25,13 +25,12 @@ const chooseaccountRouter = require('./routes/chooseaccount-route');
 const dashboardRouter = require('./routes/dashboard-route');
 const prescriptionRouter = require('./routes/prescription-route');
 const addpersonRouter = require('./routes/addperson-route'); // Import the addperson route
+const exampleRouter = require('./routes/example-route'); 
 
 // Use routes
 app.use(loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
-app.use('/prescription', prescriptionRouter);
-app.use('/chooseaccount/add-profile', addpersonRouter); // Mount the addperson route
 
 // Redirect root to login
 app.get('/', (req, res) => {
