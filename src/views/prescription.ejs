@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/prescription.css">
+    <title>Prescriptions</title>
+</head>
+<body>
+    <div class="prescription-container">
+        <h1>Prescriptions</h1>
+        <div class="prescription-tab">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medication Name</th>
+                        <th>Dosage</th>
+                        <th>Frequency</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Action</th> <!-- New column for the button -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <% prescriptions.forEach(prescription => { %>
+                    <tr>
+                        <td><%= prescription.medication_name %></td>
+                        <td><%= prescription.dosage %></td>
+                        <td><%= prescription.frequency %></td>
+                        <td><%= prescription.start_date %></td>
+                        <td><%= prescription.end_date %></td>
+                        <td>
+                            <form id="prescriptionForm" action="/prescription/request" method="POST"> <!-- Form for the button -->
+
+                                <input type="hidden" name="prescription_id" value="<%= prescription.prescription_id %>">
+
+                                <button type="submit">Request More</button> <!-- Button to request more -->
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        // Function to display the pop-up message
+        function showPopup() {
+            alert("Request sent"); // Display the pop-up message
+        }
+    
+        // Add an event listener to the form submission
+        document.getElementById("prescriptionForm").addEventListener("submit", showPopup);
+    </script>
+</body>
+</html>
