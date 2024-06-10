@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-body {
+body, html {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
+    background-color: white;
     color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -11,55 +11,61 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: radial-gradient(circle at 50% 50%, #2d2d2d, #1f1f1f);
+    /* background: radial-gradient(circle at 50% 50%, #2d2d2d, #1f1f1f); */
 }
 
 .wrapper {
     width: 90%;
     max-width: 1200px;
-    background-color: #1e1e1e;
+    background-color: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh; /* Adjust this to control the height of the wrapper */
 }
 
 .container {
     display: flex;
     width: 100%;
     height: 100%;
+    flex: 1;
 }
 
 .tabs-container {
     display: flex;
     width: 100%;
     height: 100%;
+    flex-grow: 1; /* This will allow the container to take up remaining space */
 }
 
 .left-side {
     flex: 0 0 30%;
-    background: #2b2b2b;
+    background: white;
     padding: 20px;
-    border-right: 2px solid #6200ea;
+    border-right: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
 .profile-display h2 {
-    color: #fff;
+    color: black;
     margin-bottom: 20px;
 }
 
 .tabs {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
 
 .tablinks {
-    background-color: #3c3c3c;
-    color: #f0f0f0;
+    background-color: white;
+    color: black;
     padding: 15px 20px;
     border: none;
     text-align: left;
@@ -71,23 +77,32 @@ body {
 }
 
 .tablinks:hover, .tablinks.active {
-    background-color: #6200ea;
+    background-color: #cacaca;
+}
+
+.content {
+    flex: 1; /* This will allow the content to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    overflow-y: hidden; /* Hide overflow initially */
 }
 
 .tabcontent {
     display: none;
-    padding: 20px;
     flex: 1;
-    background-color: #2d2d2d;
-    overflow-y: auto;
+    width: 500px;
+    overflow-y: auto; /* Enable scrolling for overflow content */
+    height: 100%; /* Ensure full height */
 }
 
 .tabcontent h2 {
-    color: #fff;
+    color: black;
 }
 
 .tabcontent p, .tabcontent ul, .tabcontent button {
-    color: #ccc;
+    color: black;
 }
 
 .tabcontent ul {
@@ -100,20 +115,17 @@ body {
 }
 
 .tabcontent button {
-    background-color: #6200ea;
+    background-color: black;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increased padding for larger size */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px; /* Increased border radius for a smoother appearance */
     transition: background-color 0.3s ease;
+    font-size: 18px; /* Increased font size for better visibility */
+    font-weight: bold; /* Bold font weight for emphasis */
 }
 
 .tabcontent button:hover {
-    background-color: #8c32ea;
-}
-
-.profile-display h2 {
-    color: #fff;
-    margin-bottom: 20px;
+    background-color: #333; /* Darker background color on hover for further emphasis */
 }
