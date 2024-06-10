@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-body {
+body, html {
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
     color: #f0f0f0;
@@ -21,18 +21,23 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh; /* Adjust this to control the height of the wrapper */
 }
 
 .container {
     display: flex;
     width: 100%;
     height: 100%;
+    flex: 1;
 }
 
 .tabs-container {
     display: flex;
     width: 100%;
     height: 100%;
+    flex-grow: 1; /* This will allow the container to take up remaining space */
 }
 
 .left-side {
@@ -44,6 +49,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 
 .profile-display h2 {
     color: #fff;
@@ -74,12 +80,21 @@ body {
     background-color: #6200ea;
 }
 
+.content {
+    flex: 1; /* This will allow the content to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: #2d2d2d;
+    padding: 20px;
+    overflow-y: hidden; /* Hide overflow initially */
+}
+
 .tabcontent {
     display: none;
-    padding: 20px;
     flex: 1;
-    background-color: #2d2d2d;
-    overflow-y: auto;
+    width: 100%;
+    overflow-y: auto; /* Enable scrolling for overflow content */
+    height: 100%; /* Ensure full height */
 }
 
 .tabcontent h2 {
@@ -111,9 +126,4 @@ body {
 
 .tabcontent button:hover {
     background-color: #8c32ea;
-}
-
-.profile-display h2 {
-    color: #fff;
-    margin-bottom: 20px;
 }
