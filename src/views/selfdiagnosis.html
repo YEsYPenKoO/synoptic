@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <link rel="stylesheet" href="../../public/styles/all.css">
+    <link rel="stylesheet" href="../../public/styles/selfdiagnosis.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title> Self Diagnosis </title>
+</head>
+<body>
+    <ul>
+        <li class="title"><a href=""><b>Pu Ngaol Health</b></a></li>
+        <li class="right"><a href="FAQs.html">Information</a></li>
+        <li class="right"><a href="">Change Account</a></li>
+        <li class="right"><a href="selfdiagnosis.html">Self-Diagnosis</a></li>  
+        <li class="right"><a href="">Home</a></li>              
+        
+    </ul>
+
+    <h1> Fill in this form to get help </h1>
+
+    <div class="body">
+        <img src="../../public/images/femalebody.png">
+    </div>
+
+    <div class="form">
+        <form action="">
+          <label for="description">Describe in detail how you feel:*</label>
+          <textarea id="description" name="description"></textarea>
+      
+          <p>How long have you felt like this?*</p>
+          <div class="row">
+            <div class="column">
+                <input id="duration" type="radio" name="duration" value="justhappened">
+                <label id="justhappened" for="justhappened">Just happened</label><br>
+                <input id="duration" type="radio" name="duration" value="dayorless">
+                <label id="dayorless" for="dayorless">A day or less</label><br>
+            </div>
+            <div class="column">
+                <input id="duration" type="radio" name="duration" value="weekormore">
+                <label id="weekormore" for="weekormore">A week or more</label><br>
+                <input id="duration" type="radio" name="duration" value="morethanmonth">
+                <label id="morethanmonth" for="morethanmonth">More than a month and have got worse</label><br>
+            </div>
+        </form>
+      </div>
+      
+</body>
