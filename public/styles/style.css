@@ -64,7 +64,7 @@ border: 2px solid black;
 color: #4f4f4f;
 font-size: 16px;
 border-radius: 5px;
-border-color: #007f67;
+border-color: black;
 }
 
 label{
@@ -95,6 +95,23 @@ padding: 3px 20px;
 border-radius: 2px;
 }
 
+.btn_wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;  
+    justify-content: center;
+}
+
+.btn_login {
+    background-color: #6200ea;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    width: 40%;
+    height: 35px;
+    font-size: 1rem;
+}
+
 input[type=button]{
 font-size: 16px;
 background: linear-gradient(#5681f7 5%, #4999da 100%);
@@ -119,9 +136,14 @@ input[type=button]:hover{
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1.2rem;
+    padding-left: 20px;
     font-family: Helvetica, Arial, sans-serif;
+    color: black;
+
 }
+
+
 
 .form__link:hover {
     text-decoration: underline;
