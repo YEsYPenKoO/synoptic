@@ -42,9 +42,30 @@
                 </tbody>
             </table>
         </div>
-    </div>
-
-
+        <h1>Vaccinations</h1>
+        <div class="vaccination-tab">
+           
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine Name</th>
+                        <th>Vaccination Date</th>
+                        <th>Dose</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% vaccinations.forEach(vaccination => { %>
+                    <tr>
+                        <td><%= vaccination.vaccine_name %></td>
+                        <td><%= vaccination.vaccination_date %></td>
+                        <td><%= vaccination.dose %></td>
+                        <td><%= vaccination.notes %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
     <script>
         // Function to display the pop-up message
         function showPopup() {

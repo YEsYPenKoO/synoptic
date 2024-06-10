@@ -1,0 +1,51 @@
+<!-- appointments.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/appointments.css">
+    <title>Your Appointments</title>
+</head>
+<body>
+    <% include ('partials/navbar') %>
+    <div class="container">
+        <h1>Your Appointments</h1>
+        <h2>Current User's Appointments</h2>
+        <ul>
+            <% if (appointments.length === 0) { %>
+                <li>No appointments found</li>
+            <% } else { %>
+                <% appointments.forEach(appointment => { %>
+                    <li>
+                        <strong><%= appointment.appointment_type %></strong> - 
+                        <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
+                        (Status: <%= appointment.status %>)
+                        <p>Notes: <%= appointment.notes %></p>
+                    </li>
+                <% }) %>
+            <% } %>
+        </ul>
+        <h2>Upcoming Appointments</h2>
+        <ul>
+            <% if (upcomingAppointments.length === 0) { %>
+                <li>No upcoming appointments</li>
+            <% } else { %>
+                <% upcomingAppointments.forEach(appointment => { %>
+                    <li>
+                        <strong><%= appointment.appointment_type %></strong> - 
+                        <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
+                        (Status: <%= appointment.status %>)
+                        <p>Notes: <%= appointment.notes %></p>
+                        <form action="/appointments/book/<%= appointment.appointment_id %>" method="POST">
+                            <button type="submit">Book</button>
+                        </form>
+                        
+                        
+                    </li>
+                <% }) %>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

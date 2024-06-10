@@ -75,6 +75,35 @@ const addProfile = (firstname, surname, dateOfBirth, sex, pin, householdId, call
   });
 };
 
+const getVaccinations = (profileId, callback) => {
+  const query = 'SELECT * FROM Vaccinations WHERE profile_id = ?';
+  db.all(query, [profileId], (err, rows) => {
+    callback(err, rows);
+  });
+};
+
+
+const getAppointmentsByProfileId = (profileId, callback) => {
+  const query = 'SELECT * FROM Appointments WHERE profile_id = ?';
+  db.all(query, [profileId], (err, rows) => {
+      callback(err, rows);
+  });
+};
+
+const getAllUpcomingAppointments = (callback) => {
+  const query = 'SELECT * FROM UpcomingAppointments WHERE appointment_date >= ? AND status = "Available"';
+  db.all(query, [new Date()], (err, rows) => {
+      callback(err, rows);
+  });
+};
+
+const bookAppointment = (appointmentId, callback) => {
+  const query = 'UPDATE UpcomingAppointments SET status = "Booked" WHERE appointment_id = ?';
+  db.run(query, [appointmentId], (err) => {
+      callback(err);
+  });
+};
+
 module.exports = {
   getProfiles,
   getProfileById,
@@ -83,5 +112,9 @@ module.exports = {
   getProfilesByHousehold,
   authenticateHousehold,
   addPrescriptionRequest,
-  addProfile
+  addProfile,
+  getVaccinations,
+  getAppointmentsByProfileId,
+  getAllUpcomingAppointments,
+  bookAppointment
 };

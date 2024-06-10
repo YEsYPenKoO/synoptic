@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
 
+// prescription-route.js
 router.get('/', (req, res) => {
     const profileId = req.session.profileId;
     db.getPrescriptions(profileId, (err, prescriptions) => {
@@ -9,7 +10,14 @@ router.get('/', (req, res) => {
             console.error('Error fetching prescriptions:', err);
             res.status(500).send('Internal Server Error');
         } else {
-            res.render('prescription', { prescriptions }); // Pass prescriptions including prescription_id to the view
+            db.getVaccinations(profileId, (err, vaccinations) => {
+                if (err) {
+                    console.error('Error fetching vaccinations:', err);
+                    res.status(500).send('Internal Server Error');
+                } else {
+                    res.render('prescription', { prescriptions, vaccinations });
+                }
+            });
         }
     });
 });
