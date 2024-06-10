@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Healthcare Signup</title>
+    <link rel="stylesheet" href="/public/styles/addperson.css">
+</head>
+<body>
+    <!--Main Site-->
+    <main id="site-main">
+        <div class="continer">
+            <!-- form handling -->
+            <form method="POST" id="create_user">
+                <div class="form-title text-center">
+                    <h2 class="text-dark">Create Profile</h2>
+                    <span>Use the form below to create a new profile</span>
+                </div>
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="firstname">First Name*</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" id="firstname" name="firstname" value="" placeholder="James">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Last Name*</label>
+                        <input type="text" id="surname" name="surname" value="" placeholder="Peterson">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth*</label>
+                        <input style="font-size: 1rem" type="date" id="dateOfBirth" name="dateOfBirth" value="" placeholder="DD/MM/YYYY">
+                    </div>                    
+                    <div class="form-group">
+                        <label>Sex*</label>
+                        <div class="radio inline">
+                            <input type="radio" id="male" name="sex" value="Male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="female" name="sex" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Do you have any previous diagnoses?</label>
+                        <textarea id="description" rows="5" cols="60" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pin">Pin number (4 digits)*</label>
+                        <input type="text" id="pin" name="pin" value="" pattern="[0-9]{4}" maxlength="4" placeholder="1234">
+                    </div>
+                    <div class="form-group small-print">
+                        <label>I agree with receiving SMS regarding my consultations*</label>
+                        <div class="radio inline">
+                            <input type="radio" id="sms" name="sms" value="">
+                            <label for="female"></label>
+                        </div>
+                    </div>
+                    <div class="form-group small-print">
+                        <label>I agree to the Terms of Service and Privacy Policy and certify to be over the age of 18*</label>
+                        <div class="radio inline">
+                            <input type="radio" id="terms" name="terms" value="">
+                            <label for="female"></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    </body>
+</html>
