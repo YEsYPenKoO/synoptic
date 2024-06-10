@@ -20,10 +20,12 @@ app.use(session({
 const loginRouter = require('./routes/login-route');
 const chooseaccountRouter = require('./routes/chooseaccount-route'); 
 const dashboardRouter = require('./routes/dashboard-route');
+const exampleRouter = require('./routes/example-route'); 
 
 app.use(loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
+app.use('/exampleRouter', exampleRouter); 
 
 app.get('/', (req, res) => {
     res.redirect('/login');
