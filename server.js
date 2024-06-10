@@ -20,10 +20,12 @@ app.use(session({
 const loginRouter = require('./routes/login-route');
 const chooseaccountRouter = require('./routes/chooseaccount-route'); 
 const dashboardRouter = require('./routes/dashboard-route');
+const prescriptionRouter = require('./routes/prescription-route'); // Import the prescriptions route
 
 app.use(loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
+app.use('/prescription', prescriptionRouter); // Mount the prescriptions route
 
 app.get('/', (req, res) => {
     res.redirect('/login');
