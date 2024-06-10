@@ -31,7 +31,7 @@ const exampleRouter = require('./routes/example-route');
 app.use(loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
-app.use('/addperson', addpersonRouter);
+app.use('/chooseaccount/add-profile', addpersonRouter); // Updated path for addpersonRouter
 app.use('/prescription', prescriptionRouter);
 
 // Redirect root to login
