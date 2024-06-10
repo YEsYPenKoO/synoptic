@@ -1,0 +1,117 @@
+/* General form styles */
+
+body {
+    padding: 20px; /* Adjust the value as needed */
+    margin: 0;
+    background-color: rgb(187, 212, 223); /* Light blue background */
+}
+
+form#create_user {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Helvetica, Arial, sans-serif;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Container styles */
+.continer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form title styles */
+.form-title {
+    margin-bottom: 20px;
+}
+
+.form-title h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form-title span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border-color: #007f67;
+}
+
+.form-group .radio.inline {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.form-group .radio.inline input {
+    margin-right: 5px;
+}
+
+.form-group .radio.inline label {
+    margin-right: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Button styles */
+button.btn.update {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button.btn.update:hover {
+    background-color: #0056b3;
+}
+
+/* Center the button */
+.form-group.button-group {
+    text-align: center;
+}
+
+/* Text center alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-dark {
+    color: #333;
+}
+
+/* Small print text */
+.form-group.small-print label {
+    font-size: 12px; /* Smaller font size */
+    font-weight: normal; /* Regular font weight */
+    display: flex;
+    align-items: center;
+    margin-bottom: 0; /* Remove bottom margin for alignment */
+}
