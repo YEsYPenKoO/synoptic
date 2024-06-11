@@ -1,9 +1,27 @@
-/* styles/variables.css */
+/*
+ * Author: Ed Turner
+ * Description: This stylesheet contains the CSS variables for colors, fonts, and other styling elements 
+ * 
+ * Last Updated: [11/06/2024] by Ed Turner
+ */
+
+ /* styles/variables.css */
 :root {
     --primary-color: #1e3a5f; /* Dark blue */
-    --hover-color: #3e5b84; /* Slightly lighter blue on hover */
-    --gold-color: #ffd700; /* Gold text on hover */
-    --background-color: white; /* Background color for most pages */
-    --text-color: #ffffff; /* White text */
+    --nav-hover-color: #3e5b84; /* Slightly lighter blue on hover */
+    --nav-gold-color: #ffd700; /* Gold text on hover */
+    --background-color: #ffffff; /* Background color for most pages */
+    --text-color: #f0f0f0; /* Light text color */
+    --border-color: #000000; /* Black border color */
+    --profile-text-color: #000000; /* Profile display text color */
+    --tab-background-color: #ffffff; /* Background color for tabs */
+    --tab-hover-color: #cacaca; /* Hover color for tabs */
+    --button-background-color: #000000; /* Button background color */
+    --button-hover-color: #333333; /* Button hover background color */
     --font-family: 'Roboto', sans-serif; /* Primary font */
+    --font-family-secondary: 'Orbitron', sans-serif; /* Secondary font */
+    --font-size-base: 16px; /* Base font size */
+    --font-size-large: 18px; /* Large font size */
+    --border-radius: 8px; /* Standard border radius */
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Box shadow */
 }
