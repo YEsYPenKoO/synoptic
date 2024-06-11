@@ -69,3 +69,4 @@ function submitPin() {
     })
     .catch(error => console.error('Error:', error));
 }
+

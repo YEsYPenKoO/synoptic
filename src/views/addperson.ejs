@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Healthcare Signup</title>
-    <link rel="stylesheet" href="/styles/addperson.css">
-</head>
+    <head>
+        <title>Healthcare Signup</title>
+        <link rel="stylesheet" href="/styles/addperson.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    </head>
 <body>
     <!--Main Site-->
     <main id="site-main">
-        <div class="continer">
- <!-- form handling -->
-<form method="POST" id="create_user">
-    <div class="form-title text-center">
-        <h2 class="text-dark">Create Profile</h2>
-        <span>Use the form below to create a new profile</span>
-    </div>
-    <div class="new_user">
-        <div class="form-group">
-            <label for="firstname">First Name*</label>
-            <input type="text" id="firstname" name="firstname" value="" placeholder="James">
-        </div>
-        <div class="form-group">
-            <label for="surname">Last Name*</label>
-            <input type="text" id="surname" name="surname" value="" placeholder="Peterson">
-        </div>
-        <div class="form-group">
-            <label for="dateOfBirth">Date of Birth*</label>
-            <input style="font-size: 1rem" type="date" id="dateOfBirth" name="dateOfBirth" value="" placeholder="DD/MM/YYYY">
-        </div>                    
-        <div class="form-group">
-            <label>Sex*</label>
-            <div class="radio inline">
-                <input type="radio" id="male" name="sex" value="Male">
-                <label for="male">Male</label>
-            </div>
-            <div class="radio inline">
-                <input type="radio" id="female" name="sex" value="Female">
-                <label for="female">Female</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="pin">Pin number (4 digits)*</label>
-            <input type="text" id="pin" name="pin" value="" pattern="[0-9]{4}" maxlength="4" placeholder="1234">
-        </div>
-        <!-- Add this inside your form -->
-<div class="form-group">
-    <button type="submit" class="btn btn-primary">Create Profile</button>
-</div>
-    </div>
-</form>
+        <div class="container">
+            <!-- form handling -->
+            <form method="POST" action="/chooseaccount/add-profile" id="create_user">
 
+                <div class="form-title text-center">
+                    <h2 class="text-dark">Create Profile</h2>
+                    <span>Use the form below to create a new profile</span>
+                </div>
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="firstname">First Name*</label>
+                        <input type="text" id="firstname" name="firstname" value="" placeholder="James">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Last Name*</label>
+                        <input type="text" id="surname" name="surname" value="" placeholder="Peterson">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth*</label>
+                        <input style="font-size: 1rem" type="date" id="dateOfBirth" name="dateOfBirth" value="" placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="form-group radio-group">
+                        <label>Sex*</label>
+                        <div class="radio inline">
+                            <input type="radio" id="male" name="sex" value="Male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="female" name="sex" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pin">Pin number (4 digits)*</label>
+                        <input type="text" id="pin" name="pin" value="" pattern="[0-9]{4}" maxlength="4" placeholder="1234">
+                    </div>
+                    <div class="form-group button-group">
+                        <button type="submit" class="btn btn-primary">Create Profile</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
-    
-    </body>
+    <script>
+     document.getElementById("create_user").addEventListener("submit", function(event) {
+    event.preventDefault();
+    Swal.fire(
+        'Profile Created!',
+        'Your profile has been successfully created.',
+        'success'
+    ).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/chooseaccount"; // replace with the URL of your choose account page
+        }
+    });
+
+    const formData = new URLSearchParams({
+        firstname: document.getElementById('firstname').value,
+        surname: document.getElementById('surname').value,
+        dateOfBirth: document.getElementById('dateOfBirth').value,
+        sex: document.querySelector('input[name="sex"]:checked').value,
+        pin: document.getElementById('pin').value,
+    });
+
+    fetch('/chooseaccount/add-profile', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded', // Changed this line
+        },
+        body: formData.toString(),
+    })
+});
+    </script>
+</body>
 </html>

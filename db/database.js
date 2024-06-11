@@ -69,10 +69,16 @@ const addPrescriptionRequest = (profileId, prescriptionId, callback) => {
 
 const addProfile = (firstname, surname, dateOfBirth, sex, pin, householdId, callback) => {
   const query = 'INSERT INTO Profiles (first_name, last_name, date_of_birth, sex, profile_pin, household_id) VALUES (?, ?, ?, ?, ?, ?)';
-  db.run(query, [firstname, surname, dateOfBirth, sex, pin, householdId], (err) => {
-      callback(err);
+  db.run(query, [firstname, surname, dateOfBirth, sex, pin, householdId], function(err) {
+      if (err) {
+          console.error('Database Insertion Error:', err); // Add this line
+      } else {
+          console.log('New profile added with ID:', this.lastID); // Add this line
+      }
+      callback(err, this.lastID); // this.lastID contains the ID of the newly created profile
   });
 };
+
 
 const getVaccinations = (profileId, callback) => {
   const query = 'SELECT * FROM Vaccinations WHERE profile_id = ?';
