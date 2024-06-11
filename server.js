@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -24,8 +22,9 @@ const loginRouter = require('./routes/login-route');
 const chooseaccountRouter = require('./routes/chooseaccount-route');
 const dashboardRouter = require('./routes/dashboard-route');
 const prescriptionRouter = require('./routes/prescription-route');
-const addpersonRouter = require('./routes/addperson-route'); // Import the addperson route
+const addpersonRouter = require('./routes/addperson-route'); 
 const exampleRouter = require('./routes/example-route'); 
+const logoutRouter = require('./routes/logout-route');
 
 // Use routes
 app.use(loginRouter);
@@ -33,6 +32,7 @@ app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
 app.use('/chooseaccount/add-profile', addpersonRouter); // Updated path for addpersonRouter
 app.use('/prescription', prescriptionRouter);
+app.use('/logout', logoutRouter);
 
 // Redirect root to login
 app.get('/', (req, res) => {
