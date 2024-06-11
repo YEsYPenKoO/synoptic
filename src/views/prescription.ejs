@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/styles/prescription.css">
     <link rel="stylesheet" href="/styles/navbar.css">
     <title>Prescriptions</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
     <%- include('partials/navbar') %>
@@ -71,11 +72,41 @@
     <script>
         // Function to display the pop-up message
         function showPopup() {
-            alert("Request sent"); // Display the pop-up message
+            Swal.fire(
+                'Good job!',
+                'Request sent successfully!',
+                'success'
+            )
         }
     
         // Add an event listener to the form submission
-        document.getElementById("prescriptionForm").addEventListener("submit", showPopup);
+        document.getElementById("prescriptionForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    fetch('/prescription/request', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            Swal.fire(
+                'Good job!',
+                data.message,
+                'success'
+            )
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: data.message,
+            })
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
     </script>
 </body>
 </html>

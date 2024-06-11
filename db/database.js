@@ -57,14 +57,13 @@ const authenticateHousehold = (mobileNumber, familyPassword, callback) => {
   });
 };
 
-// Function to add a prescription request to the database
 const addPrescriptionRequest = (profileId, prescriptionId, callback) => {
   const query = `
       INSERT INTO RequestPrescriptions (profile_id, prescription_id, date_requested)
-      VALUES (?, ?, CURRENT_TIMESTAMP)
+      VALUES (?, ?, datetime('now'))
   `;
   db.run(query, [profileId, prescriptionId], (err) => {
-      callback(err);
+    callback(err);
   });
 };
 

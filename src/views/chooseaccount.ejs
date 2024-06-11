@@ -14,7 +14,7 @@
         <h1 class="glowing-text">Choose Your Profile</h1>
         <div class="profile-icons">
             <% profiles.forEach(profile => { %>
-            <div class="profile-icon" onclick="showPasswordPrompt('<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
+                <div class="profile-icon" onclick="showPasswordPrompt(event, '<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
                 <p><%= profile.first_name %> <%= profile.last_name %></p>
             </div>
             <% }); %>

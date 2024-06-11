@@ -67,6 +67,11 @@ body, html {
     letter-spacing: 1px;
 }
 
+.profile-icon-selected {
+    transform: scale(1.2); /* Makes the profile bigger */
+    
+}
+
 .pin-pad {
     display: none;
     flex-direction: column;
