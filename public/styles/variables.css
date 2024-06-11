@@ -1,0 +1,9 @@
+/* styles/variables.css */
+:root {
+    --primary-color: #1e3a5f; /* Dark blue */
+    --hover-color: #3e5b84; /* Slightly lighter blue on hover */
+    --gold-color: #ffd700; /* Gold text on hover */
+    --background-color: white; /* Background color for most pages */
+    --text-color: #ffffff; /* White text */
+    --font-family: 'Roboto', sans-serif; /* Primary font */
+}
