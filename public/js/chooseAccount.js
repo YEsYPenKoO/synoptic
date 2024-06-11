@@ -8,10 +8,19 @@ let pin = '';
 let selectedProfileName;
 let selectedProfileId;
 
-function showPasswordPrompt(profileName, profileId) {
+function showPasswordPrompt(event, profileName, profileId) {
     selectedProfileName = profileName;
     selectedProfileId = profileId;
     document.getElementById('passwordPrompt').style.display = 'flex';
+
+    // Remove the selected class from all profiles
+    var profiles = document.querySelectorAll('.profile-icon');
+    profiles.forEach(function(profile) {
+        profile.classList.remove('profile-icon-selected');
+    });
+
+    // Add the selected class to the clicked profile
+    event.currentTarget.classList.add('profile-icon-selected');
 }
 
 function addToPin(num) {
@@ -60,3 +69,4 @@ function submitPin() {
     })
     .catch(error => console.error('Error:', error));
 }
+
