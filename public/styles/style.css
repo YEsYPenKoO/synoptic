@@ -1,5 +1,9 @@
 /* CSS for login form */
 /* Body of the login form*/
+
+@import 'variables.css';
+
+
 body{
     --color-primary: #b4d8da;
     --color-primary-dark: #007f67;
@@ -103,7 +107,7 @@ border-radius: 2px;
 }
 
 .btn_login {
-    background-color: #6200ea;
+    background-color: var(--primary-color);
     border-radius: 20px;
     color: white;
     border: none;
@@ -143,7 +147,27 @@ input[type=button]:hover{
 
 }
 
+.error-message {
+    padding: 10px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+}
 
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
 
 .form__link:hover {
     text-decoration: underline;

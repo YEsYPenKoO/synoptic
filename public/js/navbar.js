@@ -21,7 +21,18 @@ function logout() {
         if (response.status === 200) {
             window.location.href = "/login";
         }
-    }).catch((error) => {
-        console.error('Error:', error);
     });
+}
+
+function goToDashboard() {
+    fetch('/get-profile-id')
+        .then(response => response.json())
+        .then(data => {
+            if (data.profileId) {
+                window.location.href = `/dashboard?profile_id=${data.profileId}`;
+            } else {
+                alert('Profile ID not found');
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }

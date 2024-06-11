@@ -1,0 +1,44 @@
+{
+  "prescriptions": [
+    {
+      "profile_id": 1,
+      "medication_name": "Metformin",
+      "dosage": "500mg",
+      "frequency": "Twice a day",
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31"
+    },
+    {
+      "profile_id": 2,
+      "medication_name": "Atorvastatin",
+      "dosage": "20mg",
+      "frequency": "Once a day",
+      "start_date": "2024-02-01",
+      "end_date": "2024-08-01"
+    },
+    {
+      "profile_id": 3,
+      "medication_name": "Lisinopril",
+      "dosage": "10mg",
+      "frequency": "Once a day",
+      "start_date": "2024-03-01",
+      "end_date": "2024-09-01"
+    },
+    {
+      "profile_id": 4,
+      "medication_name": "Levothyroxine",
+      "dosage": "50mcg",
+      "frequency": "Once a day",
+      "start_date": "2024-04-01",
+      "end_date": "2024-10-01"
+    },
+    {
+      "profile_id": 5,
+      "medication_name": "Omeprazole",
+      "dosage": "20mg",
+      "frequency": "Once a day",
+      "start_date": "2024-05-01",
+      "end_date": "2024-11-01"
+    }
+  ]
+}

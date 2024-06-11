@@ -1,51 +1,50 @@
-<!-- appointments.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="/styles/appointments.css">
     <title>Your Appointments</title>
 </head>
 <body>
-    <% include ('partials/navbar') %>
-    <div class="container">
-        <h1>Your Appointments</h1>
-        <h2>Current User's Appointments</h2>
-        <ul>
+    <%- include('partials/navbar') %>
+    <div class="appointments-container">
+        <h1 class="appointments-title">Your Appointments</h1>
+        <h2 class="current-appointments-title">Current User's Appointments</h2>
+        <ul class="current-appointments-list">
             <% if (appointments.length === 0) { %>
-                <li>No appointments found</li>
+                <li class="no-appointments-message">No appointments found</li>
             <% } else { %>
                 <% appointments.forEach(appointment => { %>
-                    <li>
-                        <strong><%= appointment.appointment_type %></strong> - 
+                    <li class="appointment-item">
+                        <strong class="appointment-type"><%= appointment.appointment_type %></strong> - 
                         <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
                         (Status: <%= appointment.status %>)
-                        <p>Notes: <%= appointment.notes %></p>
+                        <p class="appointment-notes">Notes: <%= appointment.notes %></p>
                     </li>
                 <% }) %>
             <% } %>
         </ul>
-        <h2>Upcoming Appointments</h2>
-        <ul>
+        <h2 class="upcoming-appointments-title">Upcoming Appointments</h2>
+        <ul class="upcoming-appointments-list">
             <% if (upcomingAppointments.length === 0) { %>
-                <li>No upcoming appointments</li>
+                <li class="no-upcoming-appointments-message">No upcoming appointments</li>
             <% } else { %>
                 <% upcomingAppointments.forEach(appointment => { %>
-                    <li>
-                        <strong><%= appointment.appointment_type %></strong> - 
+                    <li class="upcoming-appointment-item">
+                        <strong class="upcoming-appointment-type"><%= appointment.appointment_type %></strong> - 
                         <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
                         (Status: <%= appointment.status %>)
-                        <p>Notes: <%= appointment.notes %></p>
-                        <form action="/appointments/book/<%= appointment.appointment_id %>" method="POST">
-                            <button type="submit">Book</button>
+                        <p class="upcoming-appointment-notes">Notes: <%= appointment.notes %></p>
+                        <form class="book-appointment-form" action="/appointments/book/<%= appointment.appointment_id %>" method="POST">
+                            <button class="book-appointment-button" type="submit">Book</button>
                         </form>
-                        
-                        
                     </li>
                 <% }) %>
             <% } %>
         </ul>
     </div>
+    <script src="/js/navbar.js"></script>
 </body>
 </html>
