@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import 'variables.css';
 
 body, html {
-    font-family: 'Roboto', sans-serif;
-    background-color: white;
-    color: #f0f0f0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -17,9 +16,9 @@ body, html {
 .wrapper {
     width: 90%;
     max-width: 1200px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -42,49 +41,47 @@ body, html {
 
 .left-side {
     flex: 0 0 30%;
-    background: white;
+    background: var(--background-color);
     padding: 20px;
-    border-right: 2px solid black;
+    border-right: 2px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 .profile-display h2 {
-    color: black;
+    color: var(--profile-text-color);
     margin-bottom: 20px;
 }
 
 .tabs {
-    /* display: flex; */
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
 
 .tablinks {
-    background-color: white;
-    color: black;
+    background-color: var(--tab-background-color);
+    color: var(--profile-text-color);
     padding: 15px 20px;
     border: none;
     text-align: left;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     transition: background-color 0.3s ease;
     width: 100%;
 }
 
 .tablinks:hover, .tablinks.active {
-    background-color: #cacaca;
+    background-color: var(--tab-hover-color);
 }
 
 .content {
     flex: 1; /* This will allow the content to take up remaining space */
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--background-color);
     padding: 20px;
     overflow-y: hidden; /* Hide overflow initially */
 }
@@ -98,11 +95,11 @@ body, html {
 }
 
 .tabcontent h2 {
-    color: black;
+    color: var(--profile-text-color);
 }
 
 .tabcontent p, .tabcontent ul, .tabcontent button {
-    color: black;
+    color: var(--profile-text-color);
 }
 
 .tabcontent ul {
@@ -115,17 +112,17 @@ body, html {
 }
 
 .tabcontent button {
-    background-color: black;
-    color: #fff;
+    background-color: var(--button-background-color);
+    color: var(--background-color);
     border: none;
     padding: 15px 30px; /* Increased padding for larger size */
     cursor: pointer;
-    border-radius: 8px; /* Increased border radius for a smoother appearance */
+    border-radius: var(--border-radius); /* Increased border radius for a smoother appearance */
     transition: background-color 0.3s ease;
-    font-size: 18px; /* Increased font size for better visibility */
+    font-size: var(--font-size-large); /* Increased font size for better visibility */
     font-weight: bold; /* Bold font weight for emphasis */
 }
 
 .tabcontent button:hover {
-    background-color: #333; /* Darker background color on hover for further emphasis */
+    background-color: var(--button-hover-color); /* Darker background color on hover for further emphasis */
 }

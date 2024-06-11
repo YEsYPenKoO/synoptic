@@ -26,6 +26,7 @@ const prescriptionRouter = require('./routes/prescription-route');
 const addpersonRouter = require('./routes/addperson-route'); 
 const exampleRouter = require('./routes/example-route'); 
 const appointmentsRouter = require('./routes/appointments-route'); // Import appointments route
+const logoutRouter = require('./routes/logout-route');
 
 // Use routes
 app.use(loginRouter);
@@ -34,6 +35,7 @@ app.use('/chooseaccount', chooseaccountRouter);
 app.use('/chooseaccount/add-profile', addpersonRouter); 
 app.use('/prescription', prescriptionRouter);
 app.use('/appointments', appointmentsRouter); // Use appointments route
+app.use('/logout', logoutRouter);
 
 // Redirect root to login
 app.get('/', (req, res) => {
