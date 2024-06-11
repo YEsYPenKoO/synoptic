@@ -7,6 +7,7 @@ html{
 *{
     box-sizing: border-box;
 }
+
 h1{
     text-align: center;
     margin: 80px 0 50px 0;
@@ -15,11 +16,18 @@ h1{
 
 .body{
     float: right;
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
-img{
-    height: 500px;
+.body p{
+    font-size: 20px;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+.body img{
+    height: 800px;
+    margin-left: 50px;
 }
 
 .form{
@@ -27,7 +35,7 @@ img{
     background-color:  #8badda;
     border: none;
     border-radius: 15px;
-    margin: 10px 0 0 50px;
+    margin: 10px 0 50px 50px;
     padding: 20px;
     height: auto;
     width: 600px;
@@ -54,14 +62,76 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+.row{
+    margin-bottom: 40px;
+}
+
 .column {
     float: left;
     width: 50%;
     padding: 10px;
 }
 
+.column input[type="radio"], .column input[type="checkbox"], .column label {
+    margin-bottom: 15px; /* Add space between each input-label pair */
+}
+
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.slider-container {
+    margin-top: 20px; /* Adjust as needed */
+    width: 90%; /* Make the slider container almost full width */
+    margin: 10px auto 40px auto;
+}
+
+.slider-container input[type="range"] {
+    width: 100%; /* Make the slider take up the whole width of the container */
+}
+
+#pain-severity-value{
+    margin-top: 40px;
+}
+
+.slider-labels {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px; /* Space between the slider and labels */
+}
+
+.slider-labels span {
+    position: absolute;
+    top: 0;
+}
+
+.slider-labels span:first-child {
+    left: 0;
+}
+
+.slider-labels span:last-child {
+    right: 0;
+}
+
+.submit-container{
+    width: 100;
+    margin: auto;
+    text-align:center;
+
+}
+
+button[type="submit"]{
+    width: auto;
+    height: auto;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-size: 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
 }
