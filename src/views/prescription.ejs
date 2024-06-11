@@ -21,7 +21,7 @@
                         <th>Frequency</th>
                         <th>Start Date</th>
                         <th>End Date</th>
-                        <th>Action</th> <!-- New column for the button -->
+                        <th>Action</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -33,10 +33,8 @@
                         <td><%= prescription.start_date %></td>
                         <td><%= prescription.end_date %></td>
                         <td>
-                            <form id="prescriptionForm" action="/prescription/request" method="POST"> <!-- Form for the button -->
-
+                            <form class="prescription-form" action="/prescription/request" method="POST"> <!-- Form for the button -->
                                 <input type="hidden" name="prescription_id" value="<%= prescription.prescription_id %>">
-
                                 <button type="submit">Request More</button> <!-- Button to request more -->
                             </form>
                         </td>
@@ -47,7 +45,6 @@
         </div>
         <h1>Vaccinations</h1>
         <div class="vaccination-tab">
-           
             <table>
                 <thead>
                     <tr>
@@ -69,44 +66,7 @@
                 </tbody>
             </table>
         </div>
-    <script>
-        // Function to display the pop-up message
-        function showPopup() {
-            Swal.fire(
-                'Good job!',
-                'Request sent successfully!',
-                'success'
-            )
-        }
-    
-        // Add an event listener to the form submission
-        document.getElementById("prescriptionForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    var formData = new FormData(this);
-    fetch('/prescription/request', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            Swal.fire(
-                'Good job!',
-                data.message,
-                'success'
-            )
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: data.message,
-            })
-        }
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-});
-    </script>
+    </div>
+    <script src="/js/prescription.js"></script>
 </body>
 </html>
