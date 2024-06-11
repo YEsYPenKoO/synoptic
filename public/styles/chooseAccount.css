@@ -1,0 +1,160 @@
+/*
+ * Author: Eve Yespenko
+ * Description: Stylesheet for the Choose Account page.
+ * Last Updated: [11/06/24] by Ed Turner
+ */
+
+/* Import variables */
+@import 'variables.css';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-background-color);
+    color: var(--body-text-color);
+    overflow: hidden;
+}
+
+.profile-selection {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    height: 100vw;
+    padding: 50px 0;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.profile-selection h1 {
+    font-family: var(--font-family-secondary);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding-top: 80px;
+    color: var(--profile-text-color);
+}
+
+.profile-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: var(--table-border-color);
+}
+
+.profile-icon {
+    background: var(--prescription-tab-background);
+    color: var(--profile-text-color);
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--prescription-tab-shadow);
+    padding: 20px;
+    margin: 10px;
+}
+
+.profile-icon p {
+    margin-top: 10px;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+
+.pin-pad {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: var(--background-color);
+    border: solid 4px var(--primary-color);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#passwordDots {
+    padding-bottom: 10px;
+}
+
+.pin-pad button {
+    color: var(--background-color);
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #6200ea;
+}
+
+.pin-pad .btn:hover {
+    background-color: rgb(90, 92, 235);
+}
+
+.pin-pad-text {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--profile-text-color);
+}
+
+.pin-pad-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.pin-pad-bottomRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.pin-pad-x {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    background-color: red;
+}
+
+.pin-pad-tick {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    background-color: rgb(67, 206, 102);
+}
+
+.pin-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #6200ea, 0 0 20px #6200ea, 0 0 30px #6200ea, 0 0 40px #6200ea, 0 0 50px #6200ea, 0 0 60px #6200ea, 0 0 70px #6200ea;
+    }
+    to {
+        text-shadow: 0 0 20px #9a00ff, 0 0 30px #9a00ff, 0 0 40px #9a00ff, 0 0 50px #9a00ff, 0 0 60px #9a00ff, 0 0 70px #9a00ff, 0 0 80px #9a00ff;
+    }
+}
