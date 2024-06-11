@@ -6,7 +6,7 @@
  */
 
  /* styles/variables.css */
-:root {
+ :root {
     --primary-color: #1e3a5f; /* Dark blue */
     --nav-hover-color: #3e5b84; /* Slightly lighter blue on hover */
     --nav-gold-color: #ffd700; /* Gold text on hover */
@@ -32,4 +32,9 @@
     --table-border-color: #ddd; /* Border color for table */
     --table-header-background: #f0f0f0; /* Background color for table header */
     --table-row-hover: #f9f9f9; /* Background color for table row hover */
+
+    --input-background: #e0e7ff; /* Light blue for input fields */
+    --text-color-dark: #333333; /* Darker text color */
+    --color-secondary: #252c6a; /* Secondary color for links */
+    --color-error: #f44336; /* Error color */
 }
