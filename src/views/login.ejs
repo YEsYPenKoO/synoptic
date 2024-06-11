@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
@@ -12,23 +15,24 @@
             <% } %>
             <form id="form_id" method="post" action="/login">
                 <label>Enter your phone number*</label>
-                <input type="text" name="mobileNumber" id="phone" />
+                <input type="text" name="mobileNumber" id="phone" required />
                 <label>Enter your password*</label>
-                <input type="password" name="familyPassword" id="password" />
+                <input type="password" name="familyPassword" id="password" required />
                 
                 <div class="btn_wrapper">
-                <input class="btn_login" type="submit" value="Continue" id="submit" />
-                <button class="btn_login" type="submit" href="adminlogin.html" class="btn text-dark update">Admin Login</button>
+                    <input class="btn_login" type="submit" value="Continue" id="submit" />
                 </div>
+            </form>
+            
+            <form id="admin_form_id" method="get" action="/admin">
+                <div class="btn_wrapper">
+                    <button class="btn_login" type="submit" class="btn text-dark update">Admin Login</button>
+                </div>
+            </form>
 
-                <p class="form__text">
-                    <a class="form__link" href="register.html" id="linkRegister">Don't have an account? Sign Up</a>
-                </p>
-                
-            </form>
-            </form>
-            
-            
+            <p class="form__text">
+                <a class="form__link" href="register.html" id="linkRegister">Don't have an account? Sign Up</a>
+            </p>
         </div>
     </div>
 </body>

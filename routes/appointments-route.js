@@ -43,8 +43,13 @@ router.get('/', (req, res) => {
 
 router.post('/book/:id', (req, res) => {
     const appointmentId = req.params.id;
+    const profileId = req.session.profileId; // Fetch profileId from session
 
-    db.bookAppointment(appointmentId, (err) => {
+    if (!profileId) {
+        return res.status(400).send('No profileId provided');
+    }
+
+    db.bookAppointment(appointmentId, profileId, (err) => {
         if (err) {
             console.error('Error booking appointment:', err);
             return res.status(500).send('Internal Server Error');
