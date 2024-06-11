@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db/database');
 
 router.get('/', (req, res) => {
-    const profileId = req.session.profileId; // Fetch profileId from session
+    const profileId = req.session.profileId; 
 
     if (!profileId) {
         console.log('No profileId provided');
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
                     return res.status(500).send('Internal Server Error');
                 }
 
-                // Render the appointments.ejs template with the appointments and upcomingAppointments data
+               
                 res.render('appointments', { profile, appointments, upcomingAppointments });
             });
         });
@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
 
 router.post('/book/:id', (req, res) => {
     const appointmentId = req.params.id;
-    const profileId = req.session.profileId; // Fetch profileId from session
+    const profileId = req.session.profileId; 
 
     if (!profileId) {
         return res.status(400).send('No profileId provided');
@@ -60,7 +60,7 @@ router.post('/book/:id', (req, res) => {
 
 router.post('/cancel/:id', (req, res) => {
     const appointmentId = req.params.id;
-    const profileId = req.session.profileId; // Fetch profileId from session
+    const profileId = req.session.profileId; 
 
     if (!profileId) {
         return res.status(400).send('No profileId provided');

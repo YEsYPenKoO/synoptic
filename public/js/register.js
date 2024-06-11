@@ -19,7 +19,7 @@ window.onload = function() {
     });
 };
 
-// Function to display the pop-up message
+
 function showPopup() {
     Swal.fire(
         'Good job!',
@@ -28,7 +28,7 @@ function showPopup() {
     );
 }
 
-// Add an event listener to the form submission for prescriptions
+
 document.querySelectorAll(".prescription-form").forEach(form => {
     form.addEventListener("submit", function(event) {
         event.preventDefault();

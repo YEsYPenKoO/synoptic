@@ -29,9 +29,9 @@
  
  /* Container styles */
  .container {
-     width: 380px; /* Reduced width slightly */
+     width: 380px;
      max-width: 90%;
-     padding: 1.5rem; /* Reduced padding */
+     padding: 1.5rem; 
      border-radius: var(--border-radius);
      box-shadow: var(--box-shadow);
      background-color: var(--background-color);
@@ -40,37 +40,37 @@
  
  /* Form title styles */
  .form-title {
-     margin-bottom: 15px; /* Reduced margin */
+     margin-bottom: 15px; 
  }
  
  .form-title h2 {
-     margin-bottom: 8px; /* Reduced margin */
-     font-size: 1.75rem; /* Reduced font size */
+     margin-bottom: 8px;
+     font-size: 1.75rem; 
      color: var(--text-color-dark);
  }
  
  .form-title span {
-     font-size: 0.875rem; /* Reduced font size */
+     font-size: 0.875rem; 
      color: #666;
  }
  
  /* Form group styles */
  .form-group {
-     margin-bottom: 15px; /* Reduced margin */
+     margin-bottom: 15px; 
      text-align: left;
  }
  
  .form-group label {
      display: block;
-     font-size: 0.875rem; /* Reduced font size */
-     margin-bottom: 4px; /* Reduced margin */
+     font-size: 0.875rem; 
+     margin-bottom: 4px; 
      color: var(--text-color-dark);
  }
  
  .form-group input[type="text"] {
      width: 100%;
-     padding: 8px; /* Reduced padding */
-     font-size: 0.875rem; /* Reduced font size */
+     padding: 8px;
+     font-size: 0.875rem; 
      border: 1px solid var(--border-color);
      border-radius: var(--border-radius);
      box-sizing: border-box;
@@ -82,10 +82,10 @@
  
  /* Small print styles */
  .form-group.small-print label {
-     font-size: 0.75rem; /* Reduced font size */
+     font-size: 0.75rem;
      display: flex;
      align-items: center;
-     margin-bottom: 0; /* Remove bottom margin for alignment */
+     margin-bottom: 0; 
  }
  
  .form-group .radio.inline {
@@ -99,14 +99,14 @@
  }
  
  .form-group .radio.inline label {
-     margin-right: 10px; /* Reduced margin */
+     margin-right: 10px; 
  }
  
  /* Button styles */
  button.btn.update {
      width: 100%;
-     padding: 12px; /* Reduced padding */
-     font-size: 0.875rem; /* Reduced font size */
+     padding: 12px; 
+     font-size: 0.875rem; 
      font-weight: bold;
      border: none;
      border-radius: var(--border-radius);
@@ -114,7 +114,7 @@
      color: var(--background-color);
      cursor: pointer;
      transition: background 0.3s ease;
-     margin-top: 15px; /* Reduced margin */
+     margin-top: 15px; 
  }
  
  button.btn.update:hover {
@@ -137,8 +137,8 @@
  
  /* Signup link */
  .form__text {
-     margin-top: 15px; /* Reduced margin */
-     font-size: 0.875rem; /* Reduced font size */
+     margin-top: 15px; 
+     font-size: 0.875rem;
      color: var(--text-color-dark);
  }
  
@@ -154,25 +154,25 @@
  
  /* Toast message */
 .toast {
-    width: 240px; /* Reduced width */
+    width: 240px;
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    background-color: #f44336; /* Red for error */
+    background-color: #f44336; 
     color: white;
-    padding: 6px; /* Reduced padding */
-    font-size: 0.75rem; /* Reduced font size */
+    padding: 6px; 
+    font-size: 0.75rem; 
     text-align: center;
     border-radius: var(--border-radius);
 }
 
-/* Adjusting size for SweetAlert2 pop-up messages */
+
 .swal2-popup {
-    width: 240px; /* Reduced width */
-    font-size: 0.875rem; /* Reduced font size */
-    padding: 10px; /* Reduced padding */
+    width: 240px; 
+    font-size: 0.875rem; 
+    padding: 10px; 
 }
 
  

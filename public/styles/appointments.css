@@ -15,7 +15,7 @@ body {
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-top: 100px; /* Increased margin to account for fixed navbar */
+    margin-top: 100px; 
 }
 
 .appointments-title, .current-appointments-title, .upcoming-appointments-title {
@@ -69,11 +69,11 @@ body {
     background: var(--primary-color);
     color: var(--text-color);
     border: none;
-    padding: 10px 20px; /* Ensures buttons are the same size */
+    padding: 10px 20px; 
     cursor: pointer;
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease;
-    font-size: 1em; /* Ensures buttons are the same size */
+    font-size: 1em; 
     margin-left: 10px;
 }
 
