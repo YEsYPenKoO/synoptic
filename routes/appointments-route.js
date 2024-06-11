@@ -1,4 +1,3 @@
-// appointments-route.js
 const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
@@ -52,6 +51,24 @@ router.post('/book/:id', (req, res) => {
     db.bookAppointment(appointmentId, profileId, (err) => {
         if (err) {
             console.error('Error booking appointment:', err);
+            return res.status(500).send('Internal Server Error');
+        }
+
+        res.redirect('/appointments');
+    });
+});
+
+router.post('/cancel/:id', (req, res) => {
+    const appointmentId = req.params.id;
+    const profileId = req.session.profileId; // Fetch profileId from session
+
+    if (!profileId) {
+        return res.status(400).send('No profileId provided');
+    }
+
+    db.cancelAppointment(appointmentId, (err) => {
+        if (err) {
+            console.error('Error canceling appointment:', err);
             return res.status(500).send('Internal Server Error');
         }
 

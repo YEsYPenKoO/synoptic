@@ -38,10 +38,17 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     border-left: 5px solid #3498db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .appointment-item:nth-child(even), .upcoming-appointment-item:nth-child(even) {
     background: #f1f1f1;
+}
+
+.appointment-details, .upcoming-appointment-details {
+    flex-grow: 1;
 }
 
 .appointment-type, .upcoming-appointment-type {
@@ -54,20 +61,22 @@ body {
     color: #666;
 }
 
-.book-appointment-form {
+.book-appointment-form, .cancel-appointment-form {
     display: inline;
 }
 
-.book-appointment-button {
+.book-appointment-button, .cancel-appointment-button {
     background: var(--primary-color);
     color: var(--text-color);
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px; /* Ensures buttons are the same size */
     cursor: pointer;
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease;
+    font-size: 1em; /* Ensures buttons are the same size */
+    margin-left: 10px;
 }
 
-.book-appointment-button:hover {
+.book-appointment-button:hover, .cancel-appointment-button:hover {
     background: var(--nav-hover-color);
 }

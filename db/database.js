@@ -102,7 +102,7 @@ const getAllUpcomingAppointments = (callback) => {
 
 const bookAppointment = (appointmentId, profileId, callback) => {
   const query = `
-    UPDATE UpcomingAppointments
+    UPDATE Appointments
     SET status = "Booked", profile_id = ?
     WHERE appointment_id = ?
   `;
@@ -112,6 +112,23 @@ const bookAppointment = (appointmentId, profileId, callback) => {
       callback(err);
     } else {
       console.log('Appointment booked with ID:', appointmentId);
+      callback(null);
+    }
+  });
+};
+
+const cancelAppointment = (appointmentId, callback) => {
+  const query = `
+    UPDATE Appointments
+    SET status = "Available", profile_id = NULL
+    WHERE appointment_id = ?
+  `;
+  db.run(query, [appointmentId], function (err) {
+    if (err) {
+      console.error('Error canceling appointment:', err);
+      callback(err);
+    } else {
+      console.log('Appointment canceled with ID:', appointmentId);
       callback(null);
     }
   });
@@ -144,6 +161,31 @@ const addAppointment = (appointmentDate, appointmentTime, appointmentType, statu
   });
 };
 
+// Function to check if a household with a given mobile number exists
+const checkHouseholdExistence = (mobileNumber, callback) => {
+  const query = 'SELECT 1 FROM Households WHERE mobile_number = ?';
+  db.get(query, [mobileNumber], (err, row) => {
+      if (err) {
+          callback(err, null);
+      } else {
+          callback(null, !!row);
+      }
+  });
+};
+
+// Function to add a new household
+const addHousehold = (householdName, mobileNumber, familyPassword, callback) => {
+  const query = 'INSERT INTO Households (household_name, mobile_number, family_password) VALUES (?, ?, ?)';
+  db.run(query, [householdName, mobileNumber, familyPassword], function(err) {
+      if (err) {
+          callback(err, null);
+      } else {
+          callback(null, this.lastID); // Return the ID of the newly inserted household
+      }
+  });
+};
+
+
 module.exports = {
   getProfiles,
   getProfileById,
@@ -157,6 +199,9 @@ module.exports = {
   getAppointmentsByProfileId,
   getAllUpcomingAppointments,
   bookAppointment,
+  cancelAppointment,  // Added this line
   addPrescription, 
-  addAppointment 
+  addAppointment,
+  checkHouseholdExistence,
+  addHousehold
 };
