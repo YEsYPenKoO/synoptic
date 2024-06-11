@@ -1,0 +1,39 @@
+{
+    "appointments": [
+        {
+            "appointment_date": "2024-06-15",
+            "appointment_time": "09:00:00",
+            "appointment_type": "In-Person",
+            "status": "Available",
+            "notes": "Routine check-up"
+        },
+        {
+            "appointment_date": "2024-06-16",
+            "appointment_time": "10:30:00",
+            "appointment_type": "Phone",
+            "status": "Available",
+            "notes": "Follow-up call for blood test results"
+        },
+        {
+            "appointment_date": "2024-06-17",
+            "appointment_time": "14:00:00",
+            "appointment_type": "In-Person",
+            "status": "Available",
+            "notes": "Consultation with specialist"
+        },
+        {
+            "appointment_date": "2024-06-18",
+            "appointment_time": "11:00:00",
+            "appointment_type": "Phone",
+            "status": "Available",
+            "notes": "Initial consultation"
+        },
+        {
+            "appointment_date": "2024-06-19",
+            "appointment_time": "15:30:00",
+            "appointment_type": "In-Person",
+            "status": "Available",
+            "notes": "Dental check-up"
+        }
+    ]
+}
