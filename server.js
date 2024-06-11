@@ -27,6 +27,8 @@ const addpersonRouter = require('./routes/addperson-route');
 const adminRouter = require('./routes/admin-route'); 
 const appointmentsRouter = require('./routes/appointments-route'); 
 const logoutRouter = require('./routes/logout-route');
+const FAQsRouter = require('./routes/FAQs-route');
+const selfDiagnosisRouter = require('./routes/self-diagnosis-router');
 
 // Route to get profile ID
 app.get('/get-profile-id', (req, res) => {
@@ -46,6 +48,8 @@ app.use('/prescription', prescriptionRouter);
 app.use('/appointments', appointmentsRouter); // Use appointments route
 app.use('/logout', logoutRouter);
 app.use('/admin', adminRouter); // Use the admin route
+app.use('/FAQs', FAQsRouter);
+app.use('/self-diagnosis', selfDiagnosisRouter);
 
 
 // Redirect root to login

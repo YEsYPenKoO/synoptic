@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/FAQs.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>FAQs</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <h1>Questions you might have</h1>
+    
+    <div class="pair">
+        <p class="question">What are some common diseases in your area?</p>
+        <p class="answer"><strong>Common diseases for adults:</strong></p>
+        <ul>
+            <li><a href="#tuberculosis">Tuberculosis</a></li>
+            <li><a href="#malaria">Malaria</a></li>
+            <li><a href="#denguefever">Dengue fever</a></li>
+            <li><a href="#hypertension">Hypertension</a></li>
+            <li><a href="#hiv">HIV/AIDS</a></li>
+        </ul>
+        <p class="answer"><strong>Common diseases for children:</strong></p>
+        <ul>
+            <li><a href="#respiratory">Lung infections</a></li>
+            <li><a href="#diarrhea">Diarrhea</a></li>
+            <li><a href="#hfa">Hand, food and mouth disease</a></li>
+            <li><a href="#nutrition">Poor nutrition</a></li>
+            <li><a href="#denguefever">Dengue fever</a></li>
+        </ul>
+        <p>Click on a disease to learn more</p>
+    </div>
+
+    <div class="pair" id="tuberculosis">
+        <p class="question">Do you have tuberculosis?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have tuberculosis:</p>
+        <ul>
+            <li>Long lasting cough</li>
+            <li>Bloody phlegm</li>
+            <li>Weight loss</li>
+            <li>Night sweats</li>
+            <li>High temperature</li>
+            <li>Tiredness</li>
+            <li>Not hungry</li>
+        </ul>
+        <p>To protect yourself from tuberculosis avoid being close to coughing and sneezing people and ensure fresh air can get into your home</p>
+    </div>
+
+    <div class="pair" id="malaria">
+        <p class="question">Do you have malaria?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have malaria:</p>
+        <ul>
+            <li>Tiredness</li>
+            <li>High temperature</li>
+            <li>Feeling hot and then cold</li>
+            <li>Sore muscles</li>
+            <li>Headaches</li>
+        </ul>
+        <p>To protect yourself from malaria use insect repellent, sleep under a bed net, wear baggy clothes that cover your skin and take medication if needed</p>
+        <a href="/dashboard#Requests"> Click here to speak to a doctor about getting insect repellent and medication</a>
+    </div>
+
+    <div class="pair" id="denguefever">
+        <p class="question">Do you have dengue fever?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have dengue fever:</p>
+        <ul>
+            <li>Pains in joints</li>
+            <li>Vomiting</li>
+            <li>Feel sick</li>
+            <li>Very bad headaches</li>
+            <li>Sudden chills and sweats</li>
+        </ul>
+        <p>To protect yourself from dengue fever use insect repellent, sleep under a bed net and wear baggy clothes that cover your skin</p>
+        <a href="/dashboard#Requests"> Click here to speak to a doctor about getting insect repellent</a>
+    </div>
+
+    <div class="pair" id="hypertension">
+        <p class="question">Do you have hypertension?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have hypertension:</p>
+        <ul>
+            <li>Very bad headaches</li>
+            <li>Pain in your chest</li>
+            <li>Hard to breathe</li>
+            <li>Vomiting</li>
+            <li>Feeling dizzy</li>
+            <li>Feeling anxious</li>
+        </ul>
+        <p>To protect yourself from hypertension eat healthy foods, exercise regularly, do not smoke and try to manage stress</p>
+        <a href="#healthyfood"> Click here to learn about healthy foods</a>
+    </div>
+
+    <div class="pair" id="hiv">
+        <p class="question">Do you have HIV/AIDS?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have HIV/AIDS:</p>
+        <ul>
+            <li>Pain in muscles</li>
+            <li>Headache</li>
+            <li>Sore throat</li>
+            <li>Diarrhea (click here to learn more about diarrhea)</li>
+            <li>Painful spots in mouth</li>
+            <li>Feeling hot and then cold</li>
+        </ul>
+        <p>To protect yourself from HIV/AIDS limit your sexual partners and be safe sexually (use protection such as condoms) and request a test if you need by speaking to a doctor</p>
+        <a href="/dashboard#Requests"> Click here to book an appointment with a doctor</a>
+    </div>
+
+    <div class="pair" id="respiratory">
+        <p class="question">Do you have lung infections?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have lung infections:</p>
+        <ul>
+            <li>Coughing</li>
+            <li>Sneezing a lot</li>
+            <li>Runny nose</li>
+            <li>Sore throat</li>
+            <li>Hard to breathe</li>
+            <li>Feeling very tired</li>
+            <li>Pain in your chest</li>
+        </ul>
+        <p>To protect yourself from lung infections stay away from sick people, drink clean water, get plenty of rest and eat healthy foods. </p>
+        <a href="#cleanwater"> Click here to learn about clean water</p>
+        <a href="#healthyfood"> Click here to learn about healthy foods</a>
+    </div>
+
+    <div class="pair" id="diarrhea">
+        <p class="question">What is diarrhea?</p>
+        <p class="answer">Symptoms of diarrhea are:</p>
+        <ul>
+            <li>Watery poo</li>
+            <li>Going to the toilet more than usual</li>
+            <li>Stomach pain</li>
+        </ul>
+        <p>To prevent getting diarrhea try and wash your hands when you can, eat clean and properly cooked food and stay away from sick people.</p>
+        <a href="#handwashing"> Click here for tips on hand washing</a>
+    </div>
+
+    <div class="pair" id="hfa">
+        <p class="question">Do you have hand, foot and mouth disease?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might have hand, foot and mouth disease:</p>
+        <ul>
+            <li>Feeling hot and then cold</li>
+            <li>Sore throat</li>
+            <li>Painful spots in mouth</li>
+            <li>Red itchy spots on your hands or feet</li>
+            <li> Not feeling hungry</li>            
+        </ul>
+        <p>To prevent getting hand, foot and mouth disease wash your hands when you can, stay away from sick people, keep your home and belongings clean and cover your mouth when coughing or sneezing.</p>
+        <a href="#handwashing"> Click here for tips on hand washing</a>
+        <a href="#cleanhome"> Click here for tips on keeping your home clean</a>
+    </div>
+
+    <div class="pair" id="nutrition">
+        <p class="question">Do you suffer from poor nutrition?</p>
+        <p class="answer">If multiple of the symptoms below apply to you you might suffer from poor nutrition:</p>
+        <ul>
+            <li>Lost weight</li>
+            <li>Feeling very tired</li>          
+            <li>Feeling weak</li>
+            <li>Dry or pale skin</li>
+            <li>Losing hair</li>
+            <li>Feeling dizzy</li>
+        </ul>
+        <p>To prevent getting hand, foot and mouth disease wash your hands when you can, stay away from sick people, keep your home and belongings clean and cover your mouth when coughing or sneezing.</p>
+        <a href="#handwashing"> Click here for tips on hand washing</a>
+        <a href="#cleanhome"> Click here for tips on keeping your home clean</a>
+    </div>
+
+    <div class="pair" id="handwashing">
+        <p class="question">How to wash your hands properly?</p>
+        <p></p>
+    </div>
+
+    <div class="pair" id="healthyfood">
+        <p class="question">What are healthy foods?</p>
+        <p></p>
+    </div>
+
+    <div class="pair" id="cleanhome">
+        <p class="question">How to keep your home clean?</p>
+        <p></p>
+    </div>
+
+    <div class="pair" id="cleanwater">
+        <p class="question">How to drink clean water?</p>
+        <p></p>
+    </div>
+    <br>
+</body>
+</html>
