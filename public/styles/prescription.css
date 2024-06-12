@@ -1,7 +1,9 @@
+@import 'variables.css';
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: var(--font-family);
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
     margin: 0;
     padding: 0;
 }
@@ -14,16 +16,16 @@ body {
 }
 
 .prescription-tab {
-    background-color: white;
+    background-color: var(--prescription-tab-background);
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
     width: 80%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--prescription-tab-shadow);
 }
 
 .prescription-tab h1 {
-    color: black;
+    color: var(--profile-text-color);
     margin-bottom: 20px;
 }
 
@@ -34,32 +36,66 @@ body {
 
 .prescription-tab th, .prescription-tab td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--table-border-color);
 }
 
 .prescription-tab th {
-    background-color: #f0f0f0;
+    background-color: var(--table-header-background);
     font-weight: bold;
     text-align: left;
 }
 
 .prescription-tab tbody tr:hover {
-    background-color: #f9f9f9;
+    background-color: var(--table-row-hover);
 }
 
 .prescription-tab button {
-    background-color: black;
-    color: white;
+    background-color: var(--button-background-color);
+    color: var(--background-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-weight: bold;
     margin-top: 10px;
 }
 
 .prescription-tab button:hover {
-    background-color: #333;
+    background-color: var(--button-hover-color);
+}
+
+.vaccination-tab {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vaccination-tab h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.vaccination-tab table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vaccination-tab th, .vaccination-tab td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.vaccination-tab th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.vaccination-tab tbody tr:hover {
+    background-color: #f9f9f9;
 }

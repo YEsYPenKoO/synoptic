@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
 router.get('/check-pin', (req, res) => {
     console.log('check-pin route hit');
     const profileId = req.query.profile_id;
@@ -45,7 +44,6 @@ router.get('/store-profile-in-session', (req, res) => {
         }
 
         if (!profile || req.session.householdId !== profile.household_id) {
-
             return res.json({ success: false, message: 'Profile not found or does not belong to the same household' });
         }
 
@@ -53,4 +51,5 @@ router.get('/store-profile-in-session', (req, res) => {
         res.json({ success: true });
     });
 });
+
 module.exports = router;

@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -16,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     secret: 'mySecretKey123',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: { secure: false } // Change to true if using HTTPS
 }));
 
 // Import routes
@@ -24,15 +23,41 @@ const loginRouter = require('./routes/login-route');
 const chooseaccountRouter = require('./routes/chooseaccount-route');
 const dashboardRouter = require('./routes/dashboard-route');
 const prescriptionRouter = require('./routes/prescription-route');
-const addpersonRouter = require('./routes/addperson-route'); // Import the addperson route
-const exampleRouter = require('./routes/example-route'); 
+const addpersonRouter = require('./routes/addperson-route'); 
+const adminRouter = require('./routes/admin-route'); 
+const appointmentsRouter = require('./routes/appointments-route'); 
+const logoutRouter = require('./routes/logout-route');
+const FAQsRouter = require('./routes/FAQs-route');
+const selfDiagnosisRouter = require('./routes/self-diagnosis-router');
+const registerRouter = require('./routes/register-route');
+
+// Route to get profile ID
+app.get('/get-profile-id', (req, res) => {
+    const profileId = req.session.profileId;
+    if (profileId) {
+        res.json({ profileId });
+    } else {
+        res.status(404).json({ error: 'Profile ID not found' });
+    }
+});
 
 // Use routes
 app.use(loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
+<<<<<<< HEAD
 app.use('/chooseaccount/add-profile', addpersonRouter); // Updated path for addpersonRouter
 app.use('/prescription', prescriptionRouter);
+=======
+app.use('/chooseaccount/add-profile', addpersonRouter); 
+app.use('/prescription', prescriptionRouter);
+app.use('/appointments', appointmentsRouter);
+app.use('/logout', logoutRouter);
+app.use('/admin', adminRouter);
+app.use('/FAQs', FAQsRouter);
+app.use('/self-diagnosis', selfDiagnosisRouter);
+app.use('/register', registerRouter);
+>>>>>>> a2990a9ea9c5b9c351c49cb54571dfb8ce46acdc
 
 // Redirect root to login
 app.get('/', (req, res) => {

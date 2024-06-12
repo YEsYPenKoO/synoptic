@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/prescription.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
     <title>Prescriptions</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
+    <%- include('partials/navbar') %>
     <div class="prescription-container">
         <h1>Prescriptions</h1>
         <div class="prescription-tab">
@@ -18,7 +21,7 @@
                         <th>Frequency</th>
                         <th>Start Date</th>
                         <th>End Date</th>
-                        <th>Action</th> <!-- New column for the button -->
+                        <th>Action</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -30,10 +33,8 @@
                         <td><%= prescription.start_date %></td>
                         <td><%= prescription.end_date %></td>
                         <td>
-                            <form id="prescriptionForm" action="/prescription/request" method="POST"> <!-- Form for the button -->
-
+                            <form class="prescription-form" action="/prescription/request" method="POST"> <!-- Form for the button -->
                                 <input type="hidden" name="prescription_id" value="<%= prescription.prescription_id %>">
-
                                 <button type="submit">Request More</button> <!-- Button to request more -->
                             </form>
                         </td>
@@ -42,17 +43,30 @@
                 </tbody>
             </table>
         </div>
+        <h1>Vaccinations</h1>
+        <div class="vaccination-tab">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine Name</th>
+                        <th>Vaccination Date</th>
+                        <th>Dose</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% vaccinations.forEach(vaccination => { %>
+                    <tr>
+                        <td><%= vaccination.vaccine_name %></td>
+                        <td><%= vaccination.vaccination_date %></td>
+                        <td><%= vaccination.dose %></td>
+                        <td><%= vaccination.notes %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-
-    <script>
-        // Function to display the pop-up message
-        function showPopup() {
-            alert("Request sent"); // Display the pop-up message
-        }
-    
-        // Add an event listener to the form submission
-        document.getElementById("prescriptionForm").addEventListener("submit", showPopup);
-    </script>
+    <script src="/js/prescription.js"></script>
 </body>
 </html>

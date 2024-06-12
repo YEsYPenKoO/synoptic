@@ -1,0 +1,113 @@
+/*
+ * Author: Ed Turner
+ * Description: This stylesheet contains the CSS for the login page.
+ * Last Updated: [12/06/2024] by Ed Turner
+ */
+
+ @import 'variables.css';
+
+ body, html {
+     font-family: var(--font-family);
+     background-color: var(--background-color);
+     color: var(--text-color-dark);
+     margin: 0;
+     padding: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+ 
+ .login-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+ }
+ 
+ .login-form {
+     width: 400px;
+     max-width: 90%;
+     padding: 2rem;
+     border-radius: var(--border-radius);
+     box-shadow: var(--box-shadow);
+     background-color: var(--background-color);
+     text-align: center;
+ }
+ 
+ h2 {
+     font-size: 2rem;
+     margin-bottom: 20px;
+     color: var(--text-color-dark);
+ }
+ 
+ .input-group {
+     margin-bottom: 20px;
+     text-align: left;
+ }
+ 
+ .input-group label {
+     display: block;
+     font-size: 1rem;
+     margin-bottom: 5px;
+     color: var(--text-color-dark);
+ }
+ 
+ .input-group input {
+     width: 95%;
+     padding: 10px;
+     font-size: 1rem;
+     border: 1px solid var(--border-color);
+     border-radius: var(--border-radius);
+ }
+ 
+ .input-group input::placeholder {
+     color: var(--text-color-light);
+ }
+ 
+ .btn_wrapper {
+     margin-top: 20px;
+ }
+ 
+ .btn_login {
+     width: 100%;
+     padding: 15px;
+     font-size: 1rem;
+     font-weight: bold;
+     border: none;
+     border-radius: var(--border-radius);
+     background: linear-gradient(to right, var(--primary-color), var(--nav-hover-color));
+     color: var(--background-color);
+     cursor: pointer;
+     transition: background 0.3s ease;
+ }
+ 
+ .btn_login:hover {
+     background: var(--nav-gold-color);
+ }
+ 
+ .signup-link {
+     margin-top: 20px;
+     font-size: 1rem;
+     color: var(--text-color-dark);
+ }
+ 
+ .signup-link a {
+     color: var(--primary-color);
+     text-decoration: none;
+     font-weight: bold;
+ }
+ 
+ .signup-link a:hover {
+     text-decoration: underline;
+ }
+ 
+ .error-message {
+     padding: 10px;
+     background-color: #f44336; /* Red */
+     color: white;
+     margin-bottom: 15px;
+     font-family: var(--font-family);
+     font-size: 1rem;
+ }
+ 

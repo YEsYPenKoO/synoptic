@@ -1,0 +1,184 @@
+/*
+ * Author: Eve Yespenko
+ * Description: Stylesheet for the Choose Account page.
+ * Last Updated: [11/06/24] by Ed Turner
+ */
+
+/* Import variables */
+@import 'variables.css';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-background-color);
+    color: var(--body-text-color);
+    overflow: hidden;
+}
+
+.profile-selection {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    height: 100vw;
+    padding: 50px 0;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.profile-selection h1 {
+    font-family: var(--font-family-secondary);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding-top: 80px; /* Reduced from 80px to 40px */
+    color: var(--profile-text-color);
+    padding-bottom: 0px;
+}
+
+.profile-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: var(--table-border-color);
+}
+
+.profile-icon {
+    background: var(--prescription-tab-background);
+    color: var(--profile-text-color);
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--prescription-tab-shadow);
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 150px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+}
+
+.profile-icon p {
+    margin-top: 10px;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+
+.profile-icon-selected {
+    transform: scale(1.2); /* Makes the profile bigger */
+    
+}
+
+.profile-icon i {
+    font-size: 2rem; /* adjust as needed */
+}
+
+.pin-pad {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: var(--background-color);
+    border: solid 4px var(--primary-color);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#passwordDots {
+    padding-bottom: 10px;
+}
+
+.pin-pad button {
+    color: var(--background-color);
+    border: none;
+    padding: 10px 15px; /* Reduced padding */
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem; /* Reduced font size */
+    width: 40px; /* Reduced width */
+    height: 40px; /* Reduced height */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #6200ea;
+}
+
+.pin-pad .btn:hover {
+    background-color: rgb(90, 92, 235);
+}
+
+.pin-pad-text {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--profile-text-color);
+}
+
+.pin-pad-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.pin-pad-bottomRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.pin-pad-x {
+    width: 40px; /* Reduced width */
+    height: 40px; /* Reduced height */
+    font-size: 0.8rem; /* Reduced font size */
+    background-color: red; /* X is red */
+}
+
+.pin-pad-tick {
+    width: 40px; /* Reduced width */
+    height: 40px; /* Reduced height */
+    font-size: 0.8rem; /* Reduced font size */
+    background-color: rgb(14, 215, 14); /* Tick is green */
+}
+
+.pin-dot {
+    width: 15px; /* Reduced width */
+    height: 15px; /* Reduced height */
+    background-color: var(--background-color);
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.pin-pad-x, .pin-pad-tick {
+    width: 40px; /* Reduced width */
+    height: 40px; /* Reduced height */
+    font-size: 0.8rem; /* Reduced font size */
+   
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #6200ea, 0 0 20px #6200ea, 0 0 30px #6200ea, 0 0 40px #6200ea, 0 0 50px #6200ea, 0 0 60px #6200ea, 0 0 70px #6200ea;
+    }
+    to {
+        text-shadow: 0 0 20px #9a00ff, 0 0 30px #9a00ff, 0 0 40px #9a00ff, 0 0 50px #9a00ff, 0 0 60px #9a00ff, 0 0 70px #9a00ff, 0 0 80px #9a00ff;
+    }
+}

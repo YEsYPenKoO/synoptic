@@ -1,5 +1,3 @@
-// addperson-route.js
-
 const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
@@ -11,16 +9,21 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const { firstname, surname, dateOfBirth, sex, pin } = req.body;
-    const householdId = req.session.householdId; // Get householdId from session
+    const householdId = req.session.householdId;
 
-    db.addProfile(firstname, surname, dateOfBirth, sex, pin, householdId, (err) => { // Pass householdId to addProfile
+    db.addProfile(firstname, surname, dateOfBirth, sex, pin, householdId, (err, profileId) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Internal Server Error');
         }
-        res.redirect('/chooseaccount'); // Redirect to chooseaccount page after adding profile
+        db.getProfileById(profileId, (err, profile) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Internal Server Error');
+            }
+            res.json(profile);
+        });
     });
 });
-
 
 module.exports = router;

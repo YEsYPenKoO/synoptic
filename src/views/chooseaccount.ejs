@@ -3,191 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/chooseAccount.css">
+    <link rel="stylesheet" href="/styles/variables.css">
     <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/chooseAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Select Profile</title>
-    <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); */
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            /* font-family: , sans-serif; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* background: radial-gradient(circle at 50% 50%, #2d2d2d, #1f1f1f); */
-            color: #fff;
-            overflow: hidden;
-        }
-
-        .profile-selection {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            width: 100vw;
-            height: 100vw;
-            padding: 50px 0;
-            box-sizing: border-box;
-            justify-content: center;
-        }
-
-        .profile-selection h1 {
-            /* font-family: 'Orbitron', sans-serif; */
-            font-size: 3rem;
-            margin-bottom: 20px;
-            padding-top: 80px;
-            /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.7); */
-            color: black;
-        }
-
-        .profile-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            box-shadow: black;
-        }
-
-        .profile-icon {
-            background: white;
-            color: black;
-            border-radius: 10px;
-            margin: 0 auto;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 10px;
-        }
-
-
-        .profile-icon p {
-            margin-top: 10px;
-            font-size: 1.7rem;
-            letter-spacing: 1px;
-        }
-
-        .pin-pad {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 50px;
-            background-color: rgb(255, 255, 255);
-            border: solid 4px rgb(50, 52, 194);
-            padding: 20px;
-            border-radius: 15px;
-            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); */
-        }
-
-        #passwordDots {
-            padding-bottom: 10px;
-        }
-
-
-
-        .pin-pad button {
-            /* background-color: #6200ea; */
-
-            color: #fff;
-            border: none;
-    
-            padding: 15px 20px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .btn{
-            background-color: #6200ea;
-        }
-
-        .pin-pad .btn:hover {
-            background-color: rgb(90, 92, 235);
-        }
-
-        .pin-pad-text {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: black;
-        }
-
-        .pin-pad-row {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-
-            gap: 20px;
-            width: 100%;
-        }
-
-        .pin-pad-bottomRow {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            background-color: none;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .pin-pad-x {
-            width: 50px;
-            height: 50px;
-            font-size: 1rem;
-            background-color: red;
-        }
-
-        .pin-pad-tick {
-            width: 50px;
-            height: 50px;
-            font-size: 1rem;
-            background-color: rgb(67, 206, 102);
-        }
-
-        .pin-dot {
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #6200ea, 0 0 20px #6200ea, 0 0 30px #6200ea, 0 0 40px #6200ea, 0 0 50px #6200ea, 0 0 60px #6200ea, 0 0 70px #6200ea;
-            }
-            to {
-                text-shadow: 0 0 20px #9a00ff, 0 0 30px #9a00ff, 0 0 40px #9a00ff, 0 0 50px #9a00ff, 0 0 60px #9a00ff, 0 0 70px #9a00ff, 0 0 80px #9a00ff;
-            }
-        }
-    </style>
 </head>
 <body>
     <%- include('partials/navbar') %>
     <div class="profile-selection">
-    <h1 class="glowing-text">Choose Your Profile</h1>
-    <div class="profile-icons">
-        <% profiles.forEach(profile => { %>
-        <div class="profile-icon" onclick="showPasswordPrompt('<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
-            <p><%= profile.first_name %> <%= profile.last_name %></p>
+        <h1 class="glowing-text">Choose Your Profile</h1>
+        <div class="profile-icons">
+            <% profiles.forEach(profile => { %>
+                <div class="profile-icon" onclick="showPasswordPrompt(event, '<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
+                <p><%= profile.first_name %> <%= profile.last_name %></p>
+            </div>
+            <% }); %>
+           
+            <a href="/chooseaccount/add-profile" class="profile-icon" style="cursor:pointer;">
+                <i class="fas fa-plus"></i>
+            </a>
         </div>
-        <% }); %>
-        <!-- Button for adding a new profile -->
-        <a href="/chooseaccount/add-profile" class="profile-icon" style="cursor:pointer;">
-            <p>+</p>
-        </a>
-    </div>
         <div class="pin-pad" id="passwordPrompt">
             <div class="pin-pad-text">Enter PIN:</div>
             <div class="pin-pad-row" id="passwordDots">
@@ -218,63 +54,6 @@
             </div>
         </div>
     </div>
-    <script>
-        let pin = '';
-        let selectedProfileName;
-        let selectedProfileId;
-
-        function showPasswordPrompt(profileName, profileId) {
-            selectedProfileName = profileName;
-            selectedProfileId = profileId;
-            document.getElementById('passwordPrompt').style.display = 'flex';
-        }
-
-        function addToPin(num) {
-            if (pin.length < 4) {
-                pin += num;
-                updatePinDisplay();
-            }
-        }
-
-        function clearPin() {
-            pin = '';
-            updatePinDisplay();
-        }
-
-        function updatePinDisplay() {
-            const pinDots = document.querySelectorAll('.pin-dot');
-            for (let i = 0; i < 4; i++) {
-                if (i < pin.length) {
-                    pinDots[i].style.backgroundColor = '#000000';
-                } else {
-                    pinDots[i].style.backgroundColor = 'transparent';
-                }
-            }
-        }
-
-        function submitPin() {
-            fetch(`/chooseaccount/check-pin?profile_id=${selectedProfileId}&pin=${pin}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    fetch(`/chooseaccount/store-profile-in-session?profile_id=${selectedProfileId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            localStorage.setItem('selectedProfile', selectedProfileName);
-                            window.location.href = `/dashboard?profile_id=${selectedProfileId}`;
-                        } else {
-                            alert('Error storing profile in session. Please try again.');
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-                } else {
-                    alert('Incorrect PIN. Please try again.');
-                    clearPin();
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
+    <script src="/js/chooseAccount.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/appointments.css">
+    <title>Your Appointments</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="appointments-container">
+        <h1 class="appointments-title">Your Appointments</h1>
+        <h2 class="current-appointments-title">Current User's Appointments</h2>
+        <ul class="current-appointments-list">
+            <% if (appointments.length === 0) { %>
+                <li class="no-appointments-message">No appointments found</li>
+            <% } else { %>
+                <% appointments.forEach(appointment => { %>
+                    <li class="appointment-item">
+                        <div class="appointment-details">
+                            <strong class="appointment-type"><%= appointment.appointment_type %></strong> - 
+                            <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
+                            (Status: <%= appointment.status %>)
+                            <p class="appointment-notes">Notes: <%= appointment.notes %></p>
+                        </div>
+                        <form class="cancel-appointment-form" action="/appointments/cancel/<%= appointment.appointment_id %>" method="POST">
+                            <button class="cancel-appointment-button" type="submit">Cancel Booking</button>
+                        </form>
+                    </li>
+                <% }) %>
+            <% } %>
+        </ul>
+        <h2 class="upcoming-appointments-title">Upcoming Appointments</h2>
+        <ul class="upcoming-appointments-list">
+            <% if (upcomingAppointments.length === 0) { %>
+                <li class="no-upcoming-appointments-message">No upcoming appointments</li>
+            <% } else { %>
+                <% upcomingAppointments.forEach(appointment => { %>
+                    <li class="upcoming-appointment-item">
+                        <div class="upcoming-appointment-details">
+                            <strong class="upcoming-appointment-type"><%= appointment.appointment_type %></strong> - 
+                            <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
+                            (Status: <%= appointment.status %>)
+                            <p class="upcoming-appointment-notes">Notes: <%= appointment.notes %></p>
+                        </div>
+                        <form class="book-appointment-form" action="/appointments/book/<%= appointment.appointment_id %>" method="POST">
+                            <button class="book-appointment-button" type="submit">Book</button>
+                        </form>
+                    </li>
+                <% }) %>
+            <% } %>
+        </ul>
+    </div>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

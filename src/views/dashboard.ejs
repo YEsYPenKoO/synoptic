@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/dashboard.css">
     <link rel="stylesheet" href="/styles/navbar.css">
-    <title>Healthcare Dashboard</title>
     
+    <title>Healthcare Dashboard</title>
 </head>
 <body>
-    <% include ('partials/navbar') %>
+    <%- include('partials/navbar') %>
     <div class="wrapper">
         <div class="container">
             <div class="tabs-container">
@@ -21,7 +21,7 @@
                         <button class="tablinks" onclick="openTab(event, 'Prescriptions')">Your Prescriptions</button>
                         <button class="tablinks" onclick="openTab(event, 'SelfDiagnosis')">Self Diagnosis Tools</button>
                         <button class="tablinks" onclick="openTab(event, 'HealthFAQs')">Health FAQs</button>
-                        <button class="tablinks" onclick="openTab(event, 'Requests')">Requests & Issues</button>
+                        <button class="tablinks" onclick="openTab(event, 'Appointments')">Your Appointments</button>
                     </div>
                 </div>
                 <div class="content">
@@ -33,18 +33,16 @@
                             <li>&#8226; They ensure you stay healthy and feel better.</li>
                         </ul>
                         <h2>Things to Note about Medication</h2>
-                        
                         <ul>
                             <li>&#8226; You will get more detail on your medication like dosage, frequency, and duration.</li>
                             <li>&#8226; Possible side effects will be listed to help you understand what to expect.</li>
                             <li>&#8226; Understanding these details will empower you to manage your health effectively.</li>
                         </ul>
                         <p>Learn more about your medications and how they can help you manage your health effectively.</p>
-                        <button onclick="location.href='/prescription'">View Prescriptions</button>
-
+                        <button onclick="location.href='/prescription'">View Prescriptions and Vaccinations</button>
                     </div>
                     
-                                        <div id="SelfDiagnosis" class="tabcontent">
+                    <div id="SelfDiagnosis" class="tabcontent">
                         <h2>Self Diagnosis Tools</h2>
                         <p>Explore tools to identify symptoms and learn about preventive measures.</p>
                         <p>Common Health Concerns:</p>
@@ -55,8 +53,9 @@
                             <li><strong>Allergies:</strong> Understanding triggers and management techniques</li>
                         </ul>
                         <p>Remember to consult a healthcare professional for personalized advice.</p>
-                        <button onclick="showMore('self_diagnosis.html')">See More</button>
+                        <button onclick="location.href='/self-diagnosis'">See More</button>
                     </div>
+                    
                     <div id="HealthFAQs" class="tabcontent">
                         <h2>Health FAQs</h2>
                         <p>Find answers to common health-related questions.</p>
@@ -67,44 +66,21 @@
                             <p><strong>A:</strong> Healthy eating guidelines include consuming a variety of fruits and vegetables, whole grains, lean proteins, and healthy fats.</p>
                         </ul>
                         <p>Expand your understanding of health and wellness practices.</p>
-                        <button onclick="showMore('health_faqs.html')">See More</button>
+                        <button onclick="location.href='/FAQs'">See More</button>
                     </div>
-                    <div id="Requests" class="tabcontent">
-                        <h2>Requests & Issues</h2>
-                        <p>Contact us for assistance or concerns.</p>
-                        <ul>
-                            <li>Book Appointments</li>
-                            <li>Refill Prescriptions</li>
-                            <li>Report Medical Issues</li>
-                            <li>Get Help with Insurance</li>
-                        </ul>
-                        <p><strong>Current User's Upcoming Appointments:</strong></p>
-                        <ul>
-                            <li>General checkup - June 15, 2024</li>
-                            <li>Blood test - July 1, 2024</li>
-                        </ul>
-                        <button onclick="showMore('requests.html')">Book an Appointment</button>
+                    
+                
+                    <div id="Appointments" class="tabcontent">
+                        <h2>General Appointments Information</h2>
+                        <p>Here you can manage your appointments, schedule new ones, and review upcoming and past appointments. For detailed information, visit the appointments page.</p>
+                      
+<button onclick="location.href='/appointments'">View All Appointments</button>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-        document.getElementById("Prescriptions").style.display = "block";
-        document.getElementsByClassName("tablinks")[0].className += " active";
-    </script>
+    <script src="/js/dashboard.js"></script>
 </body>
 </html>

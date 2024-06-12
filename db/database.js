@@ -31,7 +31,6 @@ const getPrescriptions = (profileId, callback) => {
   });
 };
 
-
 const verifyPin = (profileId, pin, callback) => {
   const query = 'SELECT 1 FROM Profiles WHERE profile_id = ? AND profile_pin = ?';
   db.get(query, [profileId, pin], (err, row) => {
@@ -57,23 +56,135 @@ const authenticateHousehold = (mobileNumber, familyPassword, callback) => {
   });
 };
 
-// Function to add a prescription request to the database
 const addPrescriptionRequest = (profileId, prescriptionId, callback) => {
   const query = `
       INSERT INTO RequestPrescriptions (profile_id, prescription_id, date_requested)
-      VALUES (?, ?, CURRENT_TIMESTAMP)
+      VALUES (?, ?, datetime('now'))
   `;
   db.run(query, [profileId, prescriptionId], (err) => {
-      callback(err);
+    callback(err);
   });
 };
 
 const addProfile = (firstname, surname, dateOfBirth, sex, pin, householdId, callback) => {
   const query = 'INSERT INTO Profiles (first_name, last_name, date_of_birth, sex, profile_pin, household_id) VALUES (?, ?, ?, ?, ?, ?)';
-  db.run(query, [firstname, surname, dateOfBirth, sex, pin, householdId], (err) => {
+  db.run(query, [firstname, surname, dateOfBirth, sex, pin, householdId], function(err) {
+      if (err) {
+          console.error('Database Insertion Error:', err); // Add this line
+      } else {
+          console.log('New profile added with ID:', this.lastID); // Add this line
+      }
+      callback(err, this.lastID); // this.lastID contains the ID of the newly created profile
+  });
+};
+
+
+const getVaccinations = (profileId, callback) => {
+  const query = 'SELECT * FROM Vaccinations WHERE profile_id = ?';
+  db.all(query, [profileId], (err, rows) => {
+    callback(err, rows);
+  });
+};
+
+const getAppointmentsByProfileId = (profileId, callback) => {
+  const query = 'SELECT * FROM Appointments WHERE profile_id = ?';
+  db.all(query, [profileId], (err, rows) => {
+      callback(err, rows);
+  });
+};
+
+const getAllUpcomingAppointments = (callback) => {
+  const query = 'SELECT * FROM Appointments WHERE appointment_date >= ? AND status = "Available"';
+  db.all(query, [new Date().toISOString().split('T')[0]], (err, rows) => {
+    callback(err, rows);
+  });
+};
+
+const bookAppointment = (appointmentId, profileId, callback) => {
+  const query = `
+    UPDATE Appointments
+    SET status = "Booked", profile_id = ?
+    WHERE appointment_id = ?
+  `;
+  db.run(query, [profileId, appointmentId], function (err) {
+    if (err) {
+      console.error('Error booking appointment:', err);
+      callback(err);
+    } else {
+      console.log('Appointment booked with ID:', appointmentId);
+      callback(null);
+    }
+  });
+};
+
+const cancelAppointment = (appointmentId, callback) => {
+  const query = `
+    UPDATE Appointments
+    SET status = "Available", profile_id = NULL
+    WHERE appointment_id = ?
+  `;
+  db.run(query, [appointmentId], function (err) {
+    if (err) {
+      console.error('Error canceling appointment:', err);
+      callback(err);
+    } else {
+      console.log('Appointment canceled with ID:', appointmentId);
+      callback(null);
+    }
+  });
+};
+
+const addPrescription = (profile_id, medication_name, dosage, frequency, start_date, end_date, callback) => {
+  const query = `
+    INSERT INTO Prescriptions (profile_id, medication_name, dosage, frequency, start_date, end_date)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+  console.log('Adding prescription:', profile_id, medication_name, dosage, frequency, start_date, end_date);
+  db.run(query, [profile_id, medication_name, dosage, frequency, start_date, end_date], function (err) {
+    if (err) {
+      console.error('Error inserting prescription:', err);
+      callback(err);
+    } else {
+      console.log('Prescription added with ID:', this.lastID);
+      callback(null);
+    }
+  });
+};
+// Function to add an appointment to the database
+const addAppointment = (appointmentDate, appointmentTime, appointmentType, status, notes, callback) => {
+  const query = `
+      INSERT INTO Appointments (appointment_date, appointment_time, appointment_type, status, notes)
+      VALUES (?, ?, ?, ?, ?)
+  `;
+  db.run(query, [appointmentDate, appointmentTime, appointmentType, status, notes], (err) => {
       callback(err);
   });
 };
+
+// Function to check if a household with a given mobile number exists
+const checkHouseholdExistence = (mobileNumber, callback) => {
+  const query = 'SELECT 1 FROM Households WHERE mobile_number = ?';
+  db.get(query, [mobileNumber], (err, row) => {
+      if (err) {
+          callback(err, null);
+      } else {
+          callback(null, !!row);
+      }
+  });
+};
+
+// Function to add a new household
+const addHousehold = (householdName, mobileNumber, familyPassword, callback) => {
+  const query = 'INSERT INTO Households (household_name, mobile_number, family_password) VALUES (?, ?, ?)';
+  db.run(query, [householdName, mobileNumber, familyPassword], function(err) {
+      if (err) {
+          callback(err, null);
+      } else {
+          callback(null, this.lastID); // Return the ID of the newly inserted household
+      }
+  });
+};
+
 
 module.exports = {
   getProfiles,
@@ -83,5 +194,14 @@ module.exports = {
   getProfilesByHousehold,
   authenticateHousehold,
   addPrescriptionRequest,
-  addProfile
+  addProfile,
+  getVaccinations,
+  getAppointmentsByProfileId,
+  getAllUpcomingAppointments,
+  bookAppointment,
+  cancelAppointment,  // Added this line
+  addPrescription, 
+  addAppointment,
+  checkHouseholdExistence,
+  addHousehold
 };
