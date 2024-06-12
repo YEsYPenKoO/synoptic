@@ -19,63 +19,49 @@
                     </div>
                     <div class="tabs">
                         <button class="tablinks" onclick="openTab(event, 'Prescriptions')">Your Prescriptions</button>
-                        <button class="tablinks" onclick="openTab(event, 'SelfDiagnosis')">Self Diagnosis Tools</button>
-                        <button class="tablinks" onclick="openTab(event, 'HealthFAQs')">Health FAQs</button>
+                        <button class="tablinks" onclick="openTab(event, 'SelfDiagnosis')">Self Help Tools</button>
+                        <button class="tablinks" onclick="openTab(event, 'HealthFAQs')">Health Advice</button>
                         <button class="tablinks" onclick="openTab(event, 'Appointments')">Your Appointments</button>
                     </div>
                 </div>
                 <div class="content">
                     <div id="Prescriptions" class="tabcontent">
-                        <h2>Why are you taking medications?</h2>
+                        <h2> Your prescriptions </h2>
+                        <p> Here you can see what medicine you should be taking and vaccinations coming to you soon by clicking on <strong>'view prescriptions'</strong> below </p>
+                        <h3>Why might you need a prescription or vaccination?</h3>
                         <ul>
-                            <li>&#8226; Doctors prescribed them to help with different health problems.</li>
-                            <li>&#8226; Each medicine targets a specific issue in your body.</li>
-                            <li>&#8226; They ensure you stay healthy and feel better.</li>
-                        </ul>
-                        <h2>Things to Note about Medication</h2>
-                        <ul>
-                            <li>&#8226; You will get more detail on your medication like dosage, frequency, and duration.</li>
-                            <li>&#8226; Possible side effects will be listed to help you understand what to expect.</li>
-                            <li>&#8226; Understanding these details will empower you to manage your health effectively.</li>
-                        </ul>
-                        <p>Learn more about your medications and how they can help you manage your health effectively.</p>
+                            <li>&#8226; A prescription is medicine given to you by a doctor to fix a problem you are having</li>
+                            <li>&#8226; A vaccination is normally an injection given by a doctor to protect you from diseases such as malaria (click <a href="FAQs#malaria"> <strong> here </strong> </a> to learn about malaria)</li>
+                        </ul>                       
                         <button onclick="location.href='/prescription'">View Prescriptions and Vaccinations</button>
                     </div>
                     
                     <div id="SelfDiagnosis" class="tabcontent">
-                        <h2>Self Diagnosis Tools</h2>
-                        <p>Explore tools to identify symptoms and learn about preventive measures.</p>
-                        <p>Common Health Concerns:</p>
-                        <ul>
-                            <li><strong>Headaches:</strong> Causes, symptoms, and treatment options</li>
-                            <li><strong>Back Pain:</strong> Identifying the source and remedies</li>
-                            <li><strong>Common Colds:</strong> Symptoms and ways to alleviate discomfort</li>
-                            <li><strong>Allergies:</strong> Understanding triggers and management techniques</li>
-                        </ul>
-                        <p>Remember to consult a healthcare professional for personalized advice.</p>
-                        <button onclick="location.href='/self-diagnosis'">See More</button>
+                        <h2>Self Help Tools</h2>
+                        <p>Here you can complete a form to tell us about your problems and we will give you help on what to do to get better.</p>
+                        <p>If you have already spoken to a doctor about your problem and need to speak to them again click <a href="/appointments"> <strong>here</strong></a></p>
+                        <button onclick="location.href='/self-diagnosis'">Complete the form here</button>
                     </div>
                     
                     <div id="HealthFAQs" class="tabcontent">
-                        <h2>Health FAQs</h2>
-                        <p>This section helps you understand common health problems in our community. Click on the "See More" button to get useful information about:</p>
-                        <ul>
-                            <li><strong>Common Diseases:</strong> Learn about illnesses like tuberculosis, malaria, and high blood pressure.</li>
-                            <p><strong>Symptoms:</strong> Check if you have any signs of these diseases.</p>
-                            <li><strong>Prevention Tips:</strong>  Find out how to keep yourself and your family safe.</li>
-                            <p><strong>Healthy Habits:</strong> Discover simple ways to stay healthy, like washing your hands and keeping your home clean.</p>
-                        </ul>
-                        <p>Click on the button below to learn more about each one of these points</p>
-                        <button onclick="location.href='/FAQs'">See More</button>
+                        <h2>Health Advice</h2>
+                        <p>This page helps you learn about common illnesses in your area</p>
+                        <p> You can find out how you might feel if you have any of the illnesses and also how to protect yourself from them</p>
+                        <p>Click on the button below to learn more</p>
+                        <button onclick="location.href='/FAQs'">Get health advice</button>
                     </div>
                     
                 
                     <div id="Appointments" class="tabcontent">
                         <h2>General Appointments Information</h2>
-                        <p>Here you can manage your appointments, schedule new ones, and review upcoming and past appointments. </p>
-                        <p>For detailed information, visit the appointments page.</p>
-                      
-<button onclick="location.href='/appointments'">View All Appointments</button>
+                        <p>On this page you can:</p>
+                        <ul>
+                            <li>&#8226; See appointments you have coming with a doctor</li>
+                            <li>&#8226; See information for appointments you have had in the past</li>
+                            <li>&#8226; See times and dates available to book an appointment to speak to a doctor</li>
+                        </ul>   
+                        <p>Click the button below to see your information</p>                      
+                        <button onclick="location.href='/appointments'">View All Appointments</button>
 
                     </div>
                 </div>
