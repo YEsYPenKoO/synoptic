@@ -21,7 +21,7 @@
  .admin-container {
      width: 90%;
      max-width: 600px;
-     background-color: var(--primary-color);
+     background-color: #3e5b84;
      border-radius: 15px;
      padding: 30px;
      box-shadow: var(--box-shadow);

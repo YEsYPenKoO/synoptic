@@ -4,6 +4,7 @@
 - npm i express-session
 - npm i express
 - npm i dotenv
+- npm i multer
 
 ## Running the Server
 

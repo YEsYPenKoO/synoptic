@@ -10,8 +10,8 @@ html{
 
 h1{
     text-align: center;
-    margin: 80px 0 50px 0;
-    color: #5184c8;
+    margin: 40px 0 50px 0;
+    color: black;
 }
 
 .body{
@@ -32,7 +32,7 @@ h1{
 
 .form{
     float: left;
-    background-color:  #8badda;
+    background-color:  #9eb3d0;
     border: none;
     border-radius: 15px;
     margin: 10px 0 50px 50px;
@@ -52,7 +52,7 @@ textarea {
     height: 150px;
     padding: 12px 20px;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 15px;
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
