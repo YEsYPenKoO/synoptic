@@ -3,7 +3,7 @@
 
 body, html {
     font-family: var(--font-family);
-    background-color: var(--body-background-color);
+    background-color: white;
     color: var(--body-text-color);
     margin: 0;
     padding: 20px;
@@ -16,10 +16,8 @@ body, html {
 form#create_user {
     margin: 20px auto;
     padding: 5px 100px;
-    border: 1px solid var(--table-border-color);
-    border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    box-shadow: var(--prescription-tab-shadow);
+    border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -154,4 +152,5 @@ button.btn:hover {
 
 .text-dark {
     color: var(--profile-text-color);
+    font-size: 32px;
 }

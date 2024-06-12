@@ -8,7 +8,7 @@
 
  body, html {
      font-family: var(--font-family);
-     background-color: var(--background-color);
+     background-color: white;
      color: var(--text-color-dark);
      margin: 0;
      padding: 0;
