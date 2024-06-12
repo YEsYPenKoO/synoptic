@@ -101,6 +101,10 @@ body, html {
     color: var(--profile-text-color);
 }
 
+.tabcontent h3 {
+    color: var(--profile-text-color);    
+}
+
 .tabcontent p, .tabcontent ul, .tabcontent button {
     color: var(--profile-text-color);
 }
