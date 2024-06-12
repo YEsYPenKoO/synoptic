@@ -73,10 +73,6 @@ html, body {
     border-radius: 5px;
 }
 
-.navbar-item a:hover .navbar-icon {
-    filter: invert(86%) sepia(67%) saturate(659%) hue-rotate(1deg) brightness(105%) contrast(103%);
-}
-
 /* Add padding to the body to avoid content being hidden under the navbar */
 body {
     padding-top: 60px;
