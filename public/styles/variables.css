@@ -6,6 +6,7 @@
  */
 
  /* styles/variables.css */
+ @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
  :root {
     --primary-color: #1e3a5f; /* Dark blue */
     --nav-hover-color: #3e5b84; /* Slightly lighter blue on hover */
@@ -19,8 +20,7 @@
     --tab-hover-color: #cacaca; /* Hover color for tabs */
     --button-background-color: #000000; /* Button background color */
     --button-hover-color: #333333; /* Button hover background color */
-    --font-family: 'Roboto', sans-serif; /* Primary font */
-    --font-family-secondary: 'Orbitron', sans-serif; /* Secondary font */
+    --font-family: 'Rubik', sans-serif; /* Primary font */
     --font-size-base: 16px; /* Base font size */
     --font-size-large: 18px; /* Large font size */
     --border-radius: 8px; /* Standard border radius */
