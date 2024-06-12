@@ -18,11 +18,14 @@ form#create_user {
     padding: 5px 100px;
     border: 1px solid var(--table-border-color);
     border-radius: var(--border-radius);
-    background-color: var(--prescription-tab-background);
+    box-shadow: var(--box-shadow);
     box-shadow: var(--prescription-tab-shadow);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 400px;
+    max-width: 90%;
+    padding: 2rem;
 }
 
 .container {
@@ -53,7 +56,7 @@ form#create_user {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid var(--table-border-color);
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     box-sizing: border-box;
     font-size: 1rem;
@@ -70,7 +73,6 @@ form#create_user {
 .form-group input[type="date"]:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #6200ea;
 }
 
 .form-group.radio-group {
@@ -84,7 +86,6 @@ form#create_user {
     align-items: center;
     padding: 10px;
     border-radius: 10px;
-    background-color: var(--prescription-tab-background);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -96,7 +97,7 @@ form#create_user {
 .form-group.radio-group .radio label {
     margin: 0;
     font-size: 1rem;
-    color: var(--profile-text-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -109,22 +110,22 @@ form#create_user {
     height: 20px;
     margin-right: 10px;
     border-radius: 50%;
-    border: 2px solid var(--table-border-color);
+    border: 1px solid var(--border-color);
     background-color: #fff;
     transition: background-color 0.3s ease;
 }
 
 .form-group.radio-group .radio input[type="radio"]:checked + label::before {
-    background-color: #6200ea;
-    border-color: #6200ea;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .form-group.radio-group .radio input[type="radio"]:checked + label {
-    color: #6200ea;
+    color: var(--primary-color);
 }
 
 button.btn {
-    background-color: #6200ea;
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -134,10 +135,12 @@ button.btn {
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 10px;
+    width: 100%;
+    padding: 10px;
 }
 
 button.btn:hover {
-    background-color: #9a00ff;
+    background: var(--nav-hovertwo-color);
     transform: scale(1.05);
 }
 
