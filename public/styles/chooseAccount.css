@@ -116,11 +116,11 @@ body, html {
 }
 
 .btn {
-    background-color: #6200ea;
+    background-color: #1e3a5f;
 }
 
 .pin-pad .btn:hover {
-    background-color: rgb(90, 92, 235);
+    background-color: #3e5b84;
 }
 
 .pin-pad-text {
