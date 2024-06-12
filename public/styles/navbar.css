@@ -52,7 +52,7 @@ html, body {
     text-decoration: none;
     color: var(--text-color); /* Set text color to white */
     padding: 14px 16px;
-    font-size: 14px;
+    font-size: 20px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
