@@ -75,6 +75,6 @@ html, body {
 
 /* Add padding to the body to avoid content being hidden under the navbar */
 body {
-    padding-top: 60px;
+    padding-top: 110px;
     background-color: var(--background-color);
 }
