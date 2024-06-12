@@ -67,7 +67,7 @@ body, html {
     padding: 15px 20px;
     border: none;
     text-align: left;
-    font-size: var(--font-size-base);
+    font-size: 20px;
     cursor: pointer;
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease;
@@ -94,6 +94,7 @@ body, html {
     width: 650px;
     overflow-y: auto; /* Enable scrolling for overflow content */
     height: 100%; /* Ensure full height */
+    font-size: 20px;
 }
 
 .tabcontent h2 {
@@ -107,6 +108,7 @@ body, html {
 .tabcontent ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 45px;
 }
 
 .tabcontent ul li {
