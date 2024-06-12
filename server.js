@@ -45,10 +45,8 @@ app.get('/get-profile-id', (req, res) => {
 app.use(loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
-<<<<<<< HEAD
 app.use('/chooseaccount/add-profile', addpersonRouter); // Updated path for addpersonRouter
 app.use('/prescription', prescriptionRouter);
-=======
 app.use('/chooseaccount/add-profile', addpersonRouter); 
 app.use('/prescription', prescriptionRouter);
 app.use('/appointments', appointmentsRouter);
@@ -57,7 +55,6 @@ app.use('/admin', adminRouter);
 app.use('/FAQs', FAQsRouter);
 app.use('/self-diagnosis', selfDiagnosisRouter);
 app.use('/register', registerRouter);
->>>>>>> a2990a9ea9c5b9c351c49cb54571dfb8ce46acdc
 
 // Redirect root to login
 app.get('/', (req, res) => {
