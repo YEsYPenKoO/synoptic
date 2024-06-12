@@ -6,22 +6,24 @@
     <link rel="stylesheet" href="/styles/admin.css">
     <link rel="stylesheet" href="/styles/navbar.css">
     <title>Admin Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
     <%- include('partials/navbar') %>
     <div class="admin-container">
         <h1>Admin Dashboard</h1>
-        <form action="/admin/upload-prescriptions" method="post" enctype="multipart/form-data" class="upload-form">
+        <form id="prescriptionsForm" action="/admin/upload-prescriptions" method="post" enctype="multipart/form-data" class="upload-form">
             <h2>Upload Prescriptions JSON</h2>
             <input type="file" name="prescriptions" accept=".json" required>
             <button type="submit">Upload Prescriptions</button>
         </form>
-        <form action="/admin/upload-appointments" method="post" enctype="multipart/form-data" class="upload-form">
+        <form id="appointmentsForm" action="/admin/upload-appointments" method="post" enctype="multipart/form-data" class="upload-form">
             <h2>Upload Appointments JSON</h2>
             <input type="file" name="appointments" accept=".json" required>
             <button type="submit">Upload Appointments</button>
         </form>
     </div>
     <script src="/js/navbar.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>
