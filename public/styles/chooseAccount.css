@@ -37,7 +37,6 @@ body, html {
     font-family: var(--font-family-secondary);
     font-size: 3rem;
     margin-bottom: 20px;
-    padding-top: 80px; /* Reduced from 80px to 40px */
     color: var(--profile-text-color);
     padding-bottom: 0px;
 }
