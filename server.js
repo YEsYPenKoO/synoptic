@@ -30,6 +30,7 @@ const logoutRouter = require('./routes/logout-route');
 const FAQsRouter = require('./routes/FAQs-route');
 const selfDiagnosisRouter = require('./routes/self-diagnosis-router');
 const registerRouter = require('./routes/register-route');
+const diagnosisResult = require('./routes/diagnosis-result-route');
 
 // Route to get profile ID
 app.get('/get-profile-id', (req, res) => {
@@ -53,8 +54,9 @@ app.use('/appointments', appointmentsRouter);
 app.use('/logout', logoutRouter);
 app.use('/admin', adminRouter);
 app.use('/FAQs', FAQsRouter);
-app.use('/self-diagnosis', selfDiagnosisRouter);
+app.use('/self-diagnosis', selfDiagnosisRouter); // Ensure this line is correct
 app.use('/register', registerRouter);
+app.use('/diagnosis-result', diagnosisResult);
 
 // Redirect root to login
 app.get('/', (req, res) => {
