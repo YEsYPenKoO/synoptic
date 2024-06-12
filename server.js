@@ -47,6 +47,14 @@ app.use('/dashboard', dashboardRouter);
 app.use('/chooseaccount', chooseaccountRouter);
 app.use('/chooseaccount/add-profile', addpersonRouter); // Updated path for addpersonRouter
 app.use('/prescription', prescriptionRouter);
+app.use('/chooseaccount/add-profile', addpersonRouter); 
+app.use('/prescription', prescriptionRouter);
+app.use('/appointments', appointmentsRouter);
+app.use('/logout', logoutRouter);
+app.use('/admin', adminRouter);
+app.use('/FAQs', FAQsRouter);
+app.use('/self-diagnosis', selfDiagnosisRouter);
+app.use('/register', registerRouter);
 
 // Redirect root to login
 app.get('/', (req, res) => {
