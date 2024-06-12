@@ -9,6 +9,7 @@
  :root {
     --primary-color: #1e3a5f; /* Dark blue */
     --nav-hover-color: #3e5b84; /* Slightly lighter blue on hover */
+    --nav-hovertwo-color: #4b6b97; /* Slightly lighter blue on hover */
     --nav-gold-color: #ffd700; /* Gold text on hover */
     --background-color: #ffffff; /* Background color for most pages */
     --text-color: #f0f0f0; /* Light text color */
@@ -35,6 +36,7 @@
 
     --input-background: #e0e7ff; /* Light blue for input fields */
     --text-color-dark: #333333; /* Darker text color */
+    --text-color-light: #9f9797; /* Darker text color */
     --color-secondary: #252c6a; /* Secondary color for links */
     --color-error: #f44336; /* Error color */
 }
