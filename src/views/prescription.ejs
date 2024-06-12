@@ -1,15 +1,26 @@
+<!--
+ * Author: Will Rayner
+ * Description: This page displays prescriptions and vaccinations for a user.
+ * It includes forms for requesting more prescriptions and tables for displaying data.
+ * Last Updated: [11/06/2024] by Will Rayner
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions</title>
+    <!-- CSS files -->
     <link rel="stylesheet" href="/styles/prescription.css">
     <link rel="stylesheet" href="/styles/navbar.css">
-    <title>Prescriptions</title>
+    <!-- SweetAlert2 Library -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
+    <!-- Include the navigation bar -->
     <%- include('partials/navbar') %>
+    
     <div class="prescription-container">
         <h1>Prescriptions</h1>
         <div class="prescription-tab">
@@ -33,9 +44,10 @@
                         <td><%= prescription.start_date %></td>
                         <td><%= prescription.end_date %></td>
                         <td>
-                            <form class="prescription-form" action="/prescription/request" method="POST"> <!-- Form for the button -->
+                            <!-- Form for requesting more prescriptions -->
+                            <form class="prescription-form" action="/prescription/request" method="POST">
                                 <input type="hidden" name="prescription_id" value="<%= prescription.prescription_id %>">
-                                <button type="submit">Request More</button> <!-- Button to request more -->
+                                <button type="submit">Request More</button>
                             </form>
                         </td>
                     </tr>
@@ -43,6 +55,7 @@
                 </tbody>
             </table>
         </div>
+
         <h1>Vaccinations</h1>
         <div class="vaccination-tab">
             <table>
@@ -67,6 +80,8 @@
             </table>
         </div>
     </div>
+
+    <!-- JavaScript files -->
     <script src="/js/prescription.js"></script>
 </body>
 </html>

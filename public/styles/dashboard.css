@@ -83,8 +83,9 @@ body, html {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
-    padding: 20px;
+    padding: 40px;
     overflow-y: hidden; /* Hide overflow initially */
+    width: 400px;
 }
 
 .tabcontent {
