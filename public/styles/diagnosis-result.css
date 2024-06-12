@@ -1,0 +1,20 @@
+
+@import 'variables.css';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-background-color);
+    overflow: hidden;
+}
+
+h1{
+    display: block;
+    color: black;
+}
+
