@@ -1,3 +1,9 @@
+<!--
+ * Author: Will Rayner
+ * Description: This page displays the user's current and upcoming appointments with options to cancel or book appointments.
+ * Last Updated: [11/06/24] by Will Rayner
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +14,14 @@
     <title>Your Appointments</title>
 </head>
 <body>
+    <!-- Include Navbar -->
     <%- include('partials/navbar') %>
+
+    <!-- Appointments Container -->
     <div class="appointments-container">
         <h1 class="appointments-title">Your Appointments</h1>
+
+        <!-- Current User's Appointments -->
         <h2 class="current-appointments-title">Current User's Appointments</h2>
         <ul class="current-appointments-list">
             <% if (appointments.length === 0) { %>
@@ -31,6 +42,8 @@
                 <% }) %>
             <% } %>
         </ul>
+
+        <!-- Upcoming Appointments -->
         <h2 class="upcoming-appointments-title">Upcoming Appointments</h2>
         <ul class="upcoming-appointments-list">
             <% if (upcomingAppointments.length === 0) { %>
@@ -52,6 +65,8 @@
             <% } %>
         </ul>
     </div>
+
+    <!-- JavaScript files -->
     <script src="/js/navbar.js"></script>
 </body>
 </html>
