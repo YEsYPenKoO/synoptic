@@ -1,9 +1,3 @@
-<!--
- * Author: Will Rayner
- * Description: Healthcare Dashboard page allowing users to view prescriptions, self-diagnosis tools, health FAQs, and appointments.
- * Last Updated: [11/06/24] by Will Rayner
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/dashboard.css">
     <link rel="stylesheet" href="/styles/navbar.css">
+    
     <title>Healthcare Dashboard</title>
 </head>
 <body>
-    <!-- Include Navbar -->
     <%- include('partials/navbar') %>
-
-    <!-- Main Wrapper -->
-    <div class="dashboard-wrapper">
-        <div class="dashboard-container">
+    <div class="wrapper">
+        <div class="container">
             <div class="tabs-container">
-                <div class="sidebar">
+                <div class="left-side">
                     <div class="profile-display">
                         <h2 id="profileName">Profile: <%= profile.first_name %> <%= profile.last_name %></h2>
                     </div>
                     <div class="tabs">
-                        <button class="tablink" onclick="openTab(event, 'Prescriptions')">Your Prescriptions</button>
-                        <button class="tablink" onclick="openTab(event, 'SelfDiagnosis')">Self Diagnosis Tools</button>
-                        <button class="tablink" onclick="openTab(event, 'HealthFAQs')">Health FAQs</button>
-                        <button class="tablink" onclick="openTab(event, 'Appointments')">Your Appointments</button>
+                        <button class="tablinks" onclick="openTab(event, 'Prescriptions')">Your Prescriptions</button>
+                        <button class="tablinks" onclick="openTab(event, 'SelfDiagnosis')">Self Diagnosis Tools</button>
+                        <button class="tablinks" onclick="openTab(event, 'HealthFAQs')">Health FAQs</button>
+                        <button class="tablinks" onclick="openTab(event, 'Appointments')">Your Appointments</button>
                     </div>
                 </div>
                 <div class="content">
-                    <!-- Prescriptions Tab -->
                     <div id="Prescriptions" class="tabcontent">
                         <h2>Why are you taking medications?</h2>
                         <ul>
@@ -51,7 +42,6 @@
                         <button onclick="location.href='/prescription'">View Prescriptions and Vaccinations</button>
                     </div>
                     
-                    <!-- Self Diagnosis Tools Tab -->
                     <div id="SelfDiagnosis" class="tabcontent">
                         <h2>Self Diagnosis Tools</h2>
                         <p>Explore tools to identify symptoms and learn about preventive measures.</p>
@@ -66,7 +56,6 @@
                         <button onclick="location.href='/self-diagnosis'">See More</button>
                     </div>
                     
-                    <!-- Health FAQs Tab -->
                     <div id="HealthFAQs" class="tabcontent">
                         <h2>Health FAQs</h2>
                         <p>This section helps you understand common health problems in our community. Click on the "See More" button to get useful information about:</p>
@@ -80,19 +69,19 @@
                         <button onclick="location.href='/FAQs'">See More</button>
                     </div>
                     
-                    <!-- Appointments Tab -->
+                
                     <div id="Appointments" class="tabcontent">
                         <h2>General Appointments Information</h2>
                         <p>Here you can manage your appointments, schedule new ones, and review upcoming and past appointments. </p>
                         <p>For detailed information, visit the appointments page.</p>
-                        <button onclick="location.href='/appointments'">View All Appointments</button>
+                      
+<button onclick="location.href='/appointments'">View All Appointments</button>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- JavaScript file for handling tab functionality -->
     <script src="/js/dashboard.js"></script>
 </body>
 </html>
