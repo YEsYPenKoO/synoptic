@@ -71,7 +71,6 @@ html, body {
 .navbar-item a:hover {
     background-color: var(--nav-hover-color);
     border-radius: 5px;
-    color: var(--nav-gold-color); /* Change text color to gold on hover */
 }
 
 .navbar-item a:hover .navbar-icon {
