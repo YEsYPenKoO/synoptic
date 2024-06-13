@@ -85,7 +85,7 @@
  }
  
  .upload-form button:hover {
-     background-color: var(--nav-gold-color);
+     background-color: var(--nav-hovertwo-color);
      color: var(--background-color);
  }
  
