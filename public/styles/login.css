@@ -82,7 +82,6 @@
  }
  
  .btn_login:hover {
-     /*background: var(--nav-gold-color);*/
      background: var(--nav-hovertwo-color); /* Slightly lighter blue on hover */
  }
  
@@ -101,12 +100,12 @@
  .signup-link a:hover {
      text-decoration: underline;
  }
-
+ 
  .input-group input:focus {
-    outline: none;
-    color: #3a556d;
-    border: 2.5px solid;
-}
+     outline: none;
+     color: black;
+     border: 2.5px solid #3a556d;
+ }
  
  .error-message {
      padding: 10px;
@@ -115,5 +114,21 @@
      margin-bottom: 15px;
      font-family: var(--font-family);
      font-size: 1rem;
+ }
+ 
+ .show-password {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .show-password label {
+     margin-right: 5px; /* Reduced space between text and checkbox */
+     white-space: nowrap;
+ }
+ 
+ .show-password input[type="checkbox"] {
+     margin: 0;
+     width: 16px;  /* Set a fixed width for the checkbox */
+     height: 16px; /* Set a fixed height for the checkbox */
  }
  
