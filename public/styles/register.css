@@ -81,25 +81,30 @@
  }
  
  /* Small print styles */
- .form-group.small-print label {
-     font-size: 0.75rem; /* Reduced font size */
+ .form-group.small-print {
      display: flex;
      align-items: center;
-     margin-bottom: 0; /* Remove bottom margin for alignment */
  }
  
- .form-group .radio.inline {
+ .form-group.small-print label {
+     font-size: 0.75rem; /* Reduced font size */
+     margin-bottom: 0; /* Remove bottom margin for alignment */
+     margin-right: 5px; /* Reduced right margin */
+     flex: 1;
+ }
+ 
+ .form-group.small-print .radio.inline {
      display: flex;
      align-items: center;
      margin-right: 10px;
  }
  
- .form-group .radio.inline input {
+ .form-group.small-print .radio.inline input {
      margin-right: 5px;
  }
  
- .form-group .radio.inline label {
-     margin-right: 10px; /* Reduced margin */
+ .form-group.small-print .radio.inline label {
+     margin-right: 0; /* Removed margin */
  }
  
  /* Button styles */
@@ -110,15 +115,14 @@
      font-weight: bold;
      border: none;
      border-radius: var(--border-radius);
-     background: linear-gradient(to right, var(--primary-color), var(--nav-hover-color));
+     background: var(--primary-color);
      color: var(--background-color);
      cursor: pointer;
-     transition: background 0.3s ease;
      margin-top: 15px; /* Reduced margin */
  }
  
  button.btn.update:hover {
-     background: var(--nav-gold-color);
+     background: var(--nav-hovertwo-color);
  }
  
  /* Center the button */
@@ -153,26 +157,25 @@
  }
  
  /* Toast message */
-.toast {
-    width: 240px; /* Reduced width */
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    background-color: #f44336; /* Red for error */
-    color: white;
-    padding: 6px; /* Reduced padding */
-    font-size: 0.75rem; /* Reduced font size */
-    text-align: center;
-    border-radius: var(--border-radius);
-}
-
-/* Adjusting size for SweetAlert2 pop-up messages */
-.swal2-popup {
-    width: 240px; /* Reduced width */
-    font-size: 0.875rem; /* Reduced font size */
-    padding: 10px; /* Reduced padding */
-}
-
+ .toast {
+     width: 240px; /* Reduced width */
+     position: fixed;
+     top: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 1;
+     background-color: #f44336; /* Red for error */
+     color: white;
+     padding: 6px; /* Reduced padding */
+     font-size: 0.75rem; /* Reduced font size */
+     text-align: center;
+     border-radius: var(--border-radius);
+ }
+ 
+ /* Adjusting size for SweetAlert2 pop-up messages */
+ .swal2-popup {
+     width: 240px; /* Reduced width */
+     font-size: 0.875rem; /* Reduced font size */
+     padding: 10px; /* Reduced padding */
+ }
  
