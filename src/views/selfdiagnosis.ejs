@@ -1,136 +1,86 @@
-<!--
- * Author: Liberty Harrington
- * Description: This page allows users to fill out a self-diagnosis form. It includes sections for describing symptoms, selecting symptom duration, indicating pain severity, and choosing related symptoms.
- * Last Updated: 13/06/2024 by Liberty Harrington
--->
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"></html>
 <head>
     <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="/styles/selfdiagnosis.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/formslider.js"></script>
-    <title>Self Diagnosis</title>
+    <title> Self Diagnosis </title>
 </head>
-
 <body>
-    <!-- Navigation bar inclusion -->
     <%- include('partials/navbar') %>
+    <h1> Fill in this form to get help </h1>
 
-    <!-- Main heading for the page -->
-    <div class="container text-center">
-        <h1>Fill in this form to get help</h1>
-    </div>
-
-    <!-- Body pain selection section -->
-    <div class="container body-section text-center">
+    <div class="body">
         <p><strong>Select where it hurts the most on the body below:</strong></p>
-        <img src="/images/femalebody.png" alt="Body Diagram" class="img-fluid">
+        <img src="/images/femalebody.png">
     </div>
 
-    <!-- Self diagnosis form section -->
-    <div class="container form-section">
+    <div class="form">
         <form action="/self-diagnosis" method="POST">
-            <!-- Description of symptoms -->
-            <div class="form-group">
-                <label for="description"><strong>Describe in detail how you feel:*</strong></label>
-                <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
-            </div>
-
-            <!-- Duration of symptoms -->
-            <div class="form-group">
-                <p><strong>How long have you felt like this?* (select an option below)</strong></p>
-                <div class="form-check">
-                    <input type="radio" id="justhappened" name="duration" value="justhappened" class="form-check-input" required>
-                    <label for="justhappened" class="form-check-label">Just happened</label>
+            <label for="description"><strong>Describe in detail how you feel:*</strong></label>
+            <textarea id="description" name="description"></textarea>
+        
+            <p><strong>How long have you felt like this?* (click a circle below)</strong></p>
+            <div class="row">
+                <div class="column">
+                    <input id="duration" type="radio" name="duration" value="justhappened">
+                    <label id="justhappened" for="justhappened">Just happened</label><br>
+                    <input id="duration" type="radio" name="duration" value="dayorless">
+                    <label id="dayorless" for="dayorless">A day or less</label><br>
                 </div>
-                <div class="form-check">
-                    <input type="radio" id="dayorless" name="duration" value="dayorless" class="form-check-input" required>
-                    <label for="dayorless" class="form-check-label">A day or less</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="weekormore" name="duration" value="weekormore" class="form-check-input" required>
-                    <label for="weekormore" class="form-check-label">A week or more</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="morethanmonth" name="duration" value="morethanmonth" class="form-check-input" required>
-                    <label for="morethanmonth" class="form-check-label">More than a month and have got worse</label>
+                <div class="column">
+                    <input id="duration" type="radio" name="duration" value="weekormore">
+                    <label id="weekormore" for="weekormore">A week or more</label><br>
+                    <input id="duration" type="radio" name="duration" value="morethanmonth">
+                    <label id="morethanmonth" for="morethanmonth">More than a month and have got worse</label>
                 </div>
             </div>
 
-            <!-- Pain severity slider -->
-            <div class="form-group">
-                <label for="pain-severity"><strong>How severe is your pain from 1 to 10?* (slide the circle below)</strong></label>
-                <input type="range" id="pain-severity" name="pain-severity" min="1" max="10" class="form-control-range" required>
-                <div class="slider-labels d-flex justify-content-between">
+            <label for="pain-severity"><strong>How severe is your pain from 1 to 10?* (slide the circle below)</strong></label>
+            <div class="slider-container">                
+                <input type="range" id="pain-severity" name="pain-severity" min="1" max="10">
+                <div class="slider-labels">
                     <span>1</span>
                     <span>10</span>
                 </div>
-                <p id="pain-severity-value" class="text-center">You chose: <span id="slider-value">5</span></p>
+                <p id="pain-severity-value">You chose: <span id="slider-value">5</span></p>
             </div>
 
-            <!-- Symptom selection -->
-            <div class="form-group">
-                <p><strong>Select any symptoms that you have:* (click the boxes below)</strong></p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input type="checkbox" id="Headache" name="symptoms" value="Headache" class="form-check-input">
-                            <label for="Headache" class="form-check-label">Headache</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="Vomiting" name="symptoms" value="Vomiting" class="form-check-input">
-                            <label for="Vomiting" class="form-check-label">Vomiting</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="Coughing" name="symptoms" value="Coughing" class="form-check-input">
-                            <label for="Coughing" class="form-check-label">Coughing</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="hot" name="symptoms" value="Feel hot" class="form-check-input">
-                            <label for="hot" class="form-check-label">Feel hot</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="dizzy" name="symptoms" value="Feel dizzy" class="form-check-input">
-                            <label for="dizzy" class="form-check-label">Feel dizzy</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input type="checkbox" id="Tiredness" name="symptoms" value="Tiredness" class="form-check-input">
-                            <label for="Tiredness" class="form-check-label">Tiredness</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="hardbreathe" name="symptoms" value="Hard to breathe" class="form-check-input">
-                            <label for="hardbreathe" class="form-check-label">Hard to breathe</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="tired" name="symptoms" value="Feel tired" class="form-check-input">
-                            <label for="tired" class="form-check-label">Feel tired</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="sorethroat" name="symptoms" value="Sore throat" class="form-check-input">
-                            <label for="sorethroat" class="form-check-label">Sore throat</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="lostweight" name="symptoms" value="Lost weight" class="form-check-input">
-                            <label for="lostweight" class="form-check-label">Lost weight</label>
-                        </div>
-                    </div>
+            <p><strong>Select any symptoms that you have:* (click the boxes below)</strong></p>
+            <div class="row">
+                <div class="column">
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Headache">
+                    <label id="Headache" for="Headache">Headache</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Vomiting">
+                    <label id="Vomiting" for="Vomiting">Vomiting</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Coughing">
+                    <label id="Coughing" for="Coughing">Coughing</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="hot">
+                    <label id="hot" for="hot">Feel hot</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="dizzy">
+                    <label id="dizzy" for="dizzy">Feel dizzy</label><br>
+                </div>
+                <div class="column">
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Tiredness">
+                    <label id="Tiredness" for="Tiredness">Tiredness</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="hardbreathe">
+                    <label id="hardbreathe" for="hardbreathe">Hard to breathe</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="tired">
+                    <label id="tired" for="tired">Feel tired</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="sorethroat">
+                    <label id="sorethroat" for="sorethroat">Sore throat</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="lostweight">
+                    <label id="lostweight" for="lostweight">Lost weight</label><br>
                 </div>
             </div>
-            
-            <!-- Form submission -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary"><strong>Submit Form</strong></button>
+            <div class="submit-container">
+                <button type="submit"><strong>Submit Form</strong></button>
             </div>
         </form>
     </div>
-    <div class="clearfix"></div>
+    <div style="clear: both;"></div>
     <br>
+      
 </body>
-
-</html>
