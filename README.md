@@ -1,19 +1,5 @@
 # Community health tracking system
 
-
-# Dependencies:
-- npm i nodemon
-- npm i sqlite3
-- npm i express-session
-- npm i express
-- npm i dotenv
-- npm i multer
-
-## Running the Server
-
- npm start
-
-
 ## Table of Contents
 
 - [Dependencies](#dependencies)
@@ -26,9 +12,19 @@
   - [Sizes](#sizes)
   - [Effects](#effects)
   - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
+
+# Dependencies:
+- npm i nodemon
+- npm i sqlite3
+- npm i express-session
+- npm i express
+- npm i dotenv
+- npm i multer
+
+## Running the Server
+
+ npm start
 
 ## Project Structure
 
