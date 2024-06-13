@@ -1,27 +1,46 @@
+<!--
+ * Author: Ed Turner
+ * Description: This is the admin page for uploading prescriptions and appointments JSON files. 
+ * It includes forms for uploading files and displays success or error messages using SweetAlert2.
+ * Last Updated: [11/06/2024] by Ed Turner
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- CSS files -->
     <link rel="stylesheet" href="/styles/admin.css">
     <link rel="stylesheet" href="/styles/navbar.css">
-    <title>Admin Page</title>
+    <!-- SweetAlert2 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
+    <!-- Include the navigation bar -->
     <%- include('partials/navbar') %>
+    
     <div class="admin-container">
         <h1>Admin Dashboard</h1>
-        <form action="/admin/upload-prescriptions" method="post" enctype="multipart/form-data" class="upload-form">
+        
+        <!-- Form for uploading prescriptions JSON -->
+        <form id="prescriptionsForm" action="/admin/upload-prescriptions" method="post" enctype="multipart/form-data" class="upload-form">
             <h2>Upload Prescriptions JSON</h2>
             <input type="file" name="prescriptions" accept=".json" required>
             <button type="submit">Upload Prescriptions</button>
         </form>
-        <form action="/admin/upload-appointments" method="post" enctype="multipart/form-data" class="upload-form">
+        
+        <!-- Form for uploading appointments JSON -->
+        <form id="appointmentsForm" action="/admin/upload-appointments" method="post" enctype="multipart/form-data" class="upload-form">
             <h2>Upload Appointments JSON</h2>
             <input type="file" name="appointments" accept=".json" required>
             <button type="submit">Upload Appointments</button>
         </form>
     </div>
+
+    <!-- JavaScript files -->
     <script src="/js/navbar.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>

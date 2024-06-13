@@ -10,6 +10,7 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
     /* background: radial-gradient(circle at 50% 50%, #2d2d2d, #1f1f1f); */
 }
 
@@ -43,7 +44,7 @@ body, html {
     flex: 0 0 30%;
     background: var(--background-color);
     padding: 20px;
-    border-right: 2px solid var(--border-color);
+    border-right: 2px solid #1e3a5f;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,7 +67,7 @@ body, html {
     padding: 15px 20px;
     border: none;
     text-align: left;
-    font-size: var(--font-size-base);
+    font-size: 20px;
     cursor: pointer;
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease;
@@ -74,7 +75,7 @@ body, html {
 }
 
 .tablinks:hover, .tablinks.active {
-    background-color: var(--tab-hover-color);
+    background-color: #9eb3d0;
 }
 
 .content {
@@ -82,20 +83,26 @@ body, html {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
-    padding: 20px;
+    padding: 40px;
     overflow-y: hidden; /* Hide overflow initially */
+    width: 400px;
 }
 
 .tabcontent {
     display: none;
     flex: 1;
-    width: 500px;
+    width: 650px;
     overflow-y: auto; /* Enable scrolling for overflow content */
     height: 100%; /* Ensure full height */
+    font-size: 20px;
 }
 
 .tabcontent h2 {
     color: var(--profile-text-color);
+}
+
+.tabcontent h3 {
+    color: var(--profile-text-color);    
 }
 
 .tabcontent p, .tabcontent ul, .tabcontent button {
@@ -105,6 +112,7 @@ body, html {
 .tabcontent ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 45px;
 }
 
 .tabcontent ul li {
@@ -112,8 +120,8 @@ body, html {
 }
 
 .tabcontent button {
-    background-color: var(--button-background-color);
-    color: var(--background-color);
+    background-color:#1e3a5f;
+    color: white;
     border: none;
     padding: 15px 30px; /* Increased padding for larger size */
     cursor: pointer;
@@ -124,5 +132,5 @@ body, html {
 }
 
 .tabcontent button:hover {
-    background-color: var(--button-hover-color); /* Darker background color on hover for further emphasis */
+    background-color: #3e5b84; /* Darker background color on hover for further emphasis */
 }

@@ -52,7 +52,7 @@ html, body {
     text-decoration: none;
     color: var(--text-color); /* Set text color to white */
     padding: 14px 16px;
-    font-size: 14px;
+    font-size: 20px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -71,15 +71,10 @@ html, body {
 .navbar-item a:hover {
     background-color: var(--nav-hover-color);
     border-radius: 5px;
-    color: var(--nav-gold-color); /* Change text color to gold on hover */
-}
-
-.navbar-item a:hover .navbar-icon {
-    filter: invert(86%) sepia(67%) saturate(659%) hue-rotate(1deg) brightness(105%) contrast(103%);
 }
 
 /* Add padding to the body to avoid content being hidden under the navbar */
 body {
-    padding-top: 60px;
+    padding-top: 110px;
     background-color: var(--background-color);
 }

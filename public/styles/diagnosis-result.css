@@ -1,0 +1,45 @@
+@import 'variables.css';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-background-color);
+    overflow: hidden;
+}
+
+.diagnosis-result-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.diagnosis-result-container h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+.diagnosis-box {
+    display: inline-block;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.diagnosis-box p {
+    font-size: 24px;
+    color: #555;
+    margin: 0;
+}
+
+.diagnosis-box a{
+    text-decoration: none;
+    color: #3f3f3f;
+}

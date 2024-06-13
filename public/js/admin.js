@@ -1,31 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const prescriptionForm = document.getElementById('prescription-form');
-    const appointmentForm = document.getElementById('appointment-form');
+    const prescriptionForm = document.getElementById('prescriptionsForm');
+    const appointmentForm = document.getElementById('appointmentsForm');
 
     prescriptionForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        uploadFile(prescriptionForm, '/admin/upload-prescriptions');
+        uploadFile(prescriptionForm, '/admin/upload-prescriptions', 'Prescriptions uploaded successfully!');
     });
 
     appointmentForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        uploadFile(appointmentForm, '/admin/upload-appointments');
+        uploadFile(appointmentForm, '/admin/upload-appointments', 'Appointments uploaded successfully!');
     });
 
-    function uploadFile(form, url) {
+    function uploadFile(form, url, successMessage) {
         const formData = new FormData(form);
         
         fetch(url, {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(data => {
-            alert(data); // Display a success message
+        .then(response => {
+            if (response.ok) {
+                showPopup(successMessage);
+            } else {
+                throw new Error('Upload failed');
+            }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred while uploading the file.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'An error occurred while uploading the file.',
+            });
         });
+    }
+
+    // Function to display the pop-up message
+    function showPopup(message) {
+        Swal.fire(
+            'Upload Successful!',
+            message,
+            'success'
+        );
     }
 });

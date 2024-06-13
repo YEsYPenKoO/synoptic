@@ -1,14 +1,14 @@
 /*
  * Author: Ed Turner
  * Description: This stylesheet contains the CSS for the login page.
- * Last Updated: [11/06/2024] by Ed Turner
+ * Last Updated: [12/06/2024] by Ed Turner
  */
 
  @import 'variables.css';
 
  body, html {
      font-family: var(--font-family);
-     background-color: var(--background-color);
+     background-color: white;
      color: var(--text-color-dark);
      margin: 0;
      padding: 0;
@@ -54,7 +54,7 @@
  }
  
  .input-group input {
-     width: 100%;
+     width: 95%;
      padding: 10px;
      font-size: 1rem;
      border: 1px solid var(--border-color);
@@ -79,11 +79,10 @@
      background: linear-gradient(to right, var(--primary-color), var(--nav-hover-color));
      color: var(--background-color);
      cursor: pointer;
-     transition: background 0.3s ease;
  }
  
  .btn_login:hover {
-     background: var(--nav-gold-color);
+     background: var(--nav-hovertwo-color); /* Slightly lighter blue on hover */
  }
  
  .signup-link {
@@ -102,6 +101,12 @@
      text-decoration: underline;
  }
  
+ .input-group input:focus {
+     outline: none;
+     color: black;
+     border: 2.5px solid #3a556d;
+ }
+ 
  .error-message {
      padding: 10px;
      background-color: #f44336; /* Red */
@@ -109,5 +114,21 @@
      margin-bottom: 15px;
      font-family: var(--font-family);
      font-size: 1rem;
+ }
+ 
+ .show-password {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .show-password label {
+     margin-right: 5px; /* Reduced space between text and checkbox */
+     white-space: nowrap;
+ }
+ 
+ .show-password input[type="checkbox"] {
+     margin: 0;
+     width: 16px;  /* Set a fixed width for the checkbox */
+     height: 16px; /* Set a fixed height for the checkbox */
  }
  

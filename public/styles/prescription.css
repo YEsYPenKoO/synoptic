@@ -40,7 +40,7 @@ body {
 }
 
 .prescription-tab th {
-    background-color: var(--table-header-background);
+    background-color: #9eb3d0;
     font-weight: bold;
     text-align: left;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .prescription-tab button {
-    background-color: var(--button-background-color);
+    background-color: #1e3a5f;
     color: var(--background-color);
     border: none;
     padding: 10px 20px;
@@ -91,7 +91,7 @@ body {
 }
 
 .vaccination-tab th {
-    background-color: #f0f0f0;
+    background-color: #9eb3d0;
     font-weight: bold;
     text-align: left;
 }

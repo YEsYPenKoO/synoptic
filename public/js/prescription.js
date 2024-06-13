@@ -1,7 +1,7 @@
 // Function to display the pop-up message
 function showPopup() {
     Swal.fire(
-        'Good job!',
+        'Request Sent!',
         'Request sent successfully!',
         'success'
     )
@@ -20,7 +20,7 @@ document.querySelectorAll(".prescription-form").forEach(form => {
         .then(data => {
             if (data.success) {
                 Swal.fire(
-                    'Good job!',
+                    'Request Sent!',
                     data.message,
                     'success'
                 )

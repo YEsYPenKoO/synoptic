@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/styles/selfdiagnosis.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/formslider.js"></script>
     <title> Self Diagnosis </title>
 </head>
 <body>
@@ -12,29 +13,74 @@
     <h1> Fill in this form to get help </h1>
 
     <div class="body">
+        <p><strong>Select where it hurts the most on the body below:</strong></p>
         <img src="/images/femalebody.png">
     </div>
 
     <div class="form">
-        <form action="">
-          <label for="description">Describe in detail how you feel:*</label>
-          <textarea id="description" name="description"></textarea>
-      
-          <p>How long have you felt like this?*</p>
-          <div class="row">
-            <div class="column">
-                <input id="duration" type="radio" name="duration" value="justhappened">
-                <label id="justhappened" for="justhappened">Just happened</label><br>
-                <input id="duration" type="radio" name="duration" value="dayorless">
-                <label id="dayorless" for="dayorless">A day or less</label><br>
+        <form action="/self-diagnosis" method="POST">
+            <label for="description"><strong>Describe in detail how you feel:*</strong></label>
+            <textarea id="description" name="description"></textarea>
+        
+            <p><strong>How long have you felt like this?* (click a circle below)</strong></p>
+            <div class="row">
+                <div class="column">
+                    <input id="duration" type="radio" name="duration" value="justhappened">
+                    <label id="justhappened" for="justhappened">Just happened</label><br>
+                    <input id="duration" type="radio" name="duration" value="dayorless">
+                    <label id="dayorless" for="dayorless">A day or less</label><br>
+                </div>
+                <div class="column">
+                    <input id="duration" type="radio" name="duration" value="weekormore">
+                    <label id="weekormore" for="weekormore">A week or more</label><br>
+                    <input id="duration" type="radio" name="duration" value="morethanmonth">
+                    <label id="morethanmonth" for="morethanmonth">More than a month and have got worse</label>
+                </div>
             </div>
-            <div class="column">
-                <input id="duration" type="radio" name="duration" value="weekormore">
-                <label id="weekormore" for="weekormore">A week or more</label><br>
-                <input id="duration" type="radio" name="duration" value="morethanmonth">
-                <label id="morethanmonth" for="morethanmonth">More than a month and &emsp; have got worse</label>
+
+            <label for="pain-severity"><strong>How severe is your pain from 1 to 10?* (slide the circle below)</strong></label>
+            <div class="slider-container">                
+                <input type="range" id="pain-severity" name="pain-severity" min="1" max="10">
+                <div class="slider-labels">
+                    <span>1</span>
+                    <span>10</span>
+                </div>
+                <p id="pain-severity-value">You chose: <span id="slider-value">5</span></p>
+            </div>
+
+            <p><strong>Select any symptoms that you have:* (click the boxes below)</strong></p>
+            <div class="row">
+                <div class="column">
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Headache">
+                    <label id="Headache" for="Headache">Headache</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Vomiting">
+                    <label id="Vomiting" for="Vomiting">Vomiting</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Coughing">
+                    <label id="Coughing" for="Coughing">Coughing</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="hot">
+                    <label id="hot" for="hot">Feel hot</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="dizzy">
+                    <label id="dizzy" for="dizzy">Feel dizzy</label><br>
+                </div>
+                <div class="column">
+                    <input id="symptoms" type="checkbox" name="symptoms" value="Tiredness">
+                    <label id="Tiredness" for="Tiredness">Tiredness</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="hardbreathe">
+                    <label id="hardbreathe" for="hardbreathe">Hard to breathe</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="tired">
+                    <label id="tired" for="tired">Feel tired</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="sorethroat">
+                    <label id="sorethroat" for="sorethroat">Sore throat</label><br>
+                    <input id="symptoms" type="checkbox" name="symptoms" value="lostweight">
+                    <label id="lostweight" for="lostweight">Lost weight</label><br>
+                </div>
+            </div>
+            <div class="submit-container">
+                <button type="submit"><strong>Submit Form</strong></button>
             </div>
         </form>
-      </div>
+    </div>
+    <div style="clear: both;"></div>
+    <br>
       
 </body>

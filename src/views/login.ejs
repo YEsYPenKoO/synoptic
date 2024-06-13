@@ -22,6 +22,10 @@
                     <label for="password">Enter your password*</label>
                     <input type="password" name="familyPassword" id="password" placeholder="Type your password" required />
                 </div>
+                <div class="input-group show-password">
+                    <label for="show-password">Click here to show your password</label>
+                    <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+                </div>
                 <div class="btn_wrapper">
                     <button class="btn_login" type="submit">Continue</button>
                 </div>
@@ -33,14 +37,23 @@
                 </div>
             </form>
 
-          <!-- Update the register link -->
-<div class="signup-link">
-    <p>Don't have an account? <a href="/register">Sign Up</a></p>
-</div>
 
-            
-            
+        <div class="signup-link">
+            <p>Haven't created a household? <a href="/register">Sign Up</a></p>
+        </div>  
         </div>
     </div>
 </body>
 </html>
+
+<script> 
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById('password');
+    const showPasswordCheckbox = document.getElementById('show-password');
+    
+    if (showPasswordCheckbox.checked) {
+        passwordField.type = 'text';
+    } else {
+        passwordField.type = 'password';
+    }
+}</script>

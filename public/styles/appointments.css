@@ -21,6 +21,12 @@ body {
 .appointments-title, .current-appointments-title, .upcoming-appointments-title {
     text-align: center;
     color: var(--profile-text-color);
+    
+}
+
+.appointments-title {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #1e3a5f;
 }
 
 .current-appointments-list, .upcoming-appointments-list {
