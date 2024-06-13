@@ -45,12 +45,12 @@
  
  .form-title h2 {
      margin-bottom: 8px;
-     font-size: 1.75rem; 
+     font-size: 30px; 
      color: var(--text-color-dark);
  }
  
  .form-title span {
-     font-size: 0.875rem; 
+     font-size: 20px; 
      color: #666;
  }
  
@@ -62,7 +62,7 @@
  
  .form-group label {
      display: block;
-     font-size: 0.875rem; 
+     font-size: 1rem; 
      margin-bottom: 4px; 
      color: var(--text-color-dark);
  }
@@ -87,7 +87,7 @@
  }
  
  .form-group.small-print label {
-     font-size: 0.75rem; /* Reduced font size */
+     font-size: 1rem; /* Reduced font size */
      margin-bottom: 0; /* Remove bottom margin for alignment */
      margin-right: 5px; /* Reduced right margin */
      flex: 1;
@@ -111,7 +111,7 @@
  button.btn.update {
      width: 100%;
      padding: 12px; 
-     font-size: 0.875rem; 
+     font-size: 1rem; 
      font-weight: bold;
      border: none;
      border-radius: var(--border-radius);
@@ -142,7 +142,7 @@
  /* Signup link */
  .form__text {
      margin-top: 15px; 
-     font-size: 0.875rem;
+     font-size: 1rem;
      color: var(--text-color-dark);
  }
  
@@ -154,6 +154,7 @@
  
  .form__link:hover {
      text-decoration: underline;
+     color: var(--primary-color);
  }
  
  /* Toast message */
@@ -178,4 +179,3 @@
      font-size: 0.875rem; /* Reduced font size */
      padding: 10px; /* Reduced padding */
  }
- 
