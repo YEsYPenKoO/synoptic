@@ -1,7 +1,7 @@
 /*
  * Author: Ed Turner
  * Description: This stylesheet contains the CSS for the register page, aligned to look similar to the login page.
- * Last Updated: [11/06/2024] by Ed Turner
+ * Last Updated: [13/06/2024] by Liberty Harrington
  */
 
  @import 'variables.css';
@@ -29,9 +29,9 @@
  
  /* Container styles */
  .container {
-     width: 380px; /* Reduced width slightly */
+     width: 380px;
      max-width: 90%;
-     padding: 1.5rem; /* Reduced padding */
+     padding: 1.5rem; 
      border-radius: var(--border-radius);
      box-shadow: var(--box-shadow);
      background-color: var(--background-color);
@@ -40,37 +40,37 @@
  
  /* Form title styles */
  .form-title {
-     margin-bottom: 15px; /* Reduced margin */
+     margin-bottom: 15px; 
  }
  
  .form-title h2 {
-     margin-bottom: 8px; /* Reduced margin */
-     font-size: 1.75rem; /* Reduced font size */
+     margin-bottom: 8px;
+     font-size: 30px; 
      color: var(--text-color-dark);
  }
  
  .form-title span {
-     font-size: 0.875rem; /* Reduced font size */
+     font-size: 20px; 
      color: #666;
  }
  
  /* Form group styles */
  .form-group {
-     margin-bottom: 15px; /* Reduced margin */
+     margin-bottom: 15px; 
      text-align: left;
  }
  
  .form-group label {
      display: block;
-     font-size: 0.875rem; /* Reduced font size */
-     margin-bottom: 4px; /* Reduced margin */
+     font-size: 1rem; 
+     margin-bottom: 4px; 
      color: var(--text-color-dark);
  }
  
  .form-group input[type="text"] {
      width: 100%;
-     padding: 8px; /* Reduced padding */
-     font-size: 0.875rem; /* Reduced font size */
+     padding: 8px;
+     font-size: 0.875rem; 
      border: 1px solid var(--border-color);
      border-radius: var(--border-radius);
      box-sizing: border-box;
@@ -87,7 +87,7 @@
  }
  
  .form-group.small-print label {
-     font-size: 0.75rem; /* Reduced font size */
+     font-size: 1rem; /* Reduced font size */
      margin-bottom: 0; /* Remove bottom margin for alignment */
      margin-right: 5px; /* Reduced right margin */
      flex: 1;
@@ -110,8 +110,8 @@
  /* Button styles */
  button.btn.update {
      width: 100%;
-     padding: 12px; /* Reduced padding */
-     font-size: 0.875rem; /* Reduced font size */
+     padding: 12px; 
+     font-size: 1rem; 
      font-weight: bold;
      border: none;
      border-radius: var(--border-radius);
@@ -141,8 +141,8 @@
  
  /* Signup link */
  .form__text {
-     margin-top: 15px; /* Reduced margin */
-     font-size: 0.875rem; /* Reduced font size */
+     margin-top: 15px; 
+     font-size: 1rem;
      color: var(--text-color-dark);
  }
  
@@ -154,6 +154,7 @@
  
  .form__link:hover {
      text-decoration: underline;
+     color: var(--primary-color);
  }
  
  /* Toast message */
@@ -178,4 +179,3 @@
      font-size: 0.875rem; /* Reduced font size */
      padding: 10px; /* Reduced padding */
  }
- 

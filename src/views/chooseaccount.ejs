@@ -1,29 +1,43 @@
+<!-- 
+ * Author: Will Rayner
+ * Description: This page allows users to choose their profile from a list of options.
+ * Users can click on each profile icon to prompt a PIN entry for verification.
+ * Last Updated: [12/06/2024] by Will Rayner
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Setting the character encoding, viewport, and title of the page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linking the CSS stylesheets for variables, navbar, and profile selection -->
     <link rel="stylesheet" href="/styles/variables.css">
     <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="/styles/chooseAccount.css">
+    <!-- Linking the Font Awesome CSS for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Select Profile</title>
 </head>
 <body>
+    <!-- Including the navigation bar partial -->
     <%- include('partials/navbar') %>
+    <!-- Main container for profile selection -->
     <div class="profile-selection">
         <h1 class="glowing-text">Choose Your Profile</h1>
+        <!-- Container for displaying profile icons -->
         <div class="profile-icons">
             <% profiles.forEach(profile => { %>
                 <div class="profile-icon" onclick="showPasswordPrompt(event, '<%= profile.first_name %> <%= profile.last_name %>', '<%= profile.profile_id %>')">
-                <p><%= profile.first_name %> <%= profile.last_name %></p>
-            </div>
+                    <p><%= profile.first_name %> <%= profile.last_name %></p>
+                </div>
             <% }); %>
-           
+            <!-- Link to add a new profile -->
             <a href="/chooseaccount/add-profile" class="profile-icon" style="cursor:pointer;">
                 <i class="fas fa-plus"></i>
             </a>
         </div>
+        <!-- PIN pad for entering profile authentication -->
         <div class="pin-pad" id="passwordPrompt">
             <div class="pin-pad-text">Enter PIN:</div>
             <div class="pin-pad-row" id="passwordDots">
@@ -32,6 +46,7 @@
                 <div class="pin-dot" id="pinDot3"></div>
                 <div class="pin-dot" id="pinDot4"></div>
             </div>
+            <!-- Rows for numeric buttons -->
             <div class="pin-pad-row">
                 <button class="btn" onclick="addToPin(1)">1</button>
                 <button class="btn" onclick="addToPin(2)">2</button>
@@ -47,6 +62,7 @@
                 <button class="btn" onclick="addToPin(8)">8</button>
                 <button class="btn" onclick="addToPin(9)">9</button>
             </div>
+            <!-- Bottom row with special buttons -->
             <div class="pin-pad-bottomRow">
                 <button class="pin-pad-x" onclick="clearPin()">X</button>
                 <button class="btn" onclick="addToPin(0)">0</button>
@@ -54,6 +70,7 @@
             </div>
         </div>
     </div>
+    <!-- Linking the JavaScript file for profile selection functionality -->
     <script src="/js/chooseAccount.js"></script>
 </body>
 </html>

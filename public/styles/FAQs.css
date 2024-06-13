@@ -1,18 +1,21 @@
+/* CSS for FAQ page */
+/* Author: Liberty Harrington */
+
 @import 'variables.css';
 
-body{
+body {
   font-family: var(--font-family);
   padding-bottom: 300px;  /* Adjust this value as needed */
   margin: 0;
 }
 
-h1{
+h1 {
   text-align: center;
   margin: 50px 0 50px 0;
   color: black;
 }
 
-.pair{
+.pair {
   margin: 0 8% 50px 8%;
   border: solid #9eb3d0 4px;
   border-radius: 15px;
@@ -20,34 +23,34 @@ h1{
   scroll-margin-top: 100px;
 }
 
-.question{
+.question {
   font-size: 24px;
   font-weight: bold;
   color: var(--primary-color);
 }
 
-.answer{
+.answer {
   font-size: 20px;
 }
 
-ul{
+ul {
   font-size: 20px;
 }
 
-li{
+li {
   margin-bottom: 5px;
 }
 
-li::marker{
-  color:#6492ce;
+li::marker {
+  color: #6492ce;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
 
-p{
-  font-size:20px;
+p {
+  font-size: 20px;
 }
