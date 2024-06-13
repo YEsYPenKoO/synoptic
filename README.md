@@ -20,7 +20,6 @@
 - [Running the Server](#running-the-server)
 - [Project Structure](#project-structure)
 - [Database Setup](#database-setup)
-- [API Endpoints](#api-endpoints)
 - [Style Guide](#style-guide)
   - [Colors](#colors)
   - [Fonts](#fonts)
@@ -36,7 +35,7 @@
 - src/ - Source files for the application
 - routes/ - API routes
 - db/ - Database files and scripts
-- public/ - Public assets like CSS, JS, images
+- public/ - Public like CSS, JS, images, icons
 - views/ - EJS templates
 - styles/ - CSS stylesheets
 - js/ - Client-side JavaScript files
@@ -45,18 +44,7 @@
 
 ## Database Setup
 
-Make sure you have SQLite installed. Create the database and tables by running the SQL scripts in the `db/` directory.
-
-## API Endpoints
-
-### Admin Routes
-- `POST /admin/upload-prescriptions` - Upload prescription JSON file
-- `POST /admin/upload-appointments` - Upload appointments JSON file
-
-### Appointment Routes
-- `GET /appointments` - Get user appointments
-- `POST /appointments/book/:id` - Book an appointment
-- `POST /appointments/cancel/:id` - Cancel an appointment
+Make sure you have SQLite installed. 
 
 # Style Guide
 
@@ -100,7 +88,7 @@ Make sure you have SQLite installed. Create the database and tables by running t
 
 ### Variables
 
--
+
 - `--primary-color`: Used for primary elements like the navbar background.
 - `--nav-hover-color`: Used for hover effects on the navbar.
 - `--nav-gold-color`: Used for text on hover in the navbar.
