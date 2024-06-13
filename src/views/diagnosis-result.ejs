@@ -1,19 +1,32 @@
+<!-- 
+ * Author: Liberty Harrington
+ * Description: This page displays the diagnosis result to the user.
+ * It includes a navigation bar and a container for the diagnosis message.
+ * Last Updated: [12/06/2024] by Liberty Harrington
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Setting the character encoding, viewport, and title of the page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linking the CSS stylesheets for the navbar and the diagnosis result page -->
     <link rel="stylesheet" href="/styles/navbar.css">
-    <link rel="stylesheet" href="/styles/diagnosis-result.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/styles/diagnosis-result.css">
     <title>Diagnosis Result</title>
 </head>
 <body>
+    <!-- Including the navigation bar partial -->
     <%- include('partials/navbar') %>
+    <!-- Main container for the diagnosis result -->
     <div class="diagnosis-result-container">
         <h1>Your Diagnosis Result</h1>
+        <!-- Box displaying the diagnosis message -->
         <div class="diagnosis-box">
             <p><%- diagnosis %></p>
         </div>
     </div>
 </body>
 </html>
+

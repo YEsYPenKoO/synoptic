@@ -1,18 +1,30 @@
+<!--
+ * Author: Abi Osifeso
+ * Description: This page allows new users to register for a family account.
+ * It includes a form for inputting household name, family phone number, and family password.
+ * It also includes options for agreeing to receive SMS regarding consultations and agreeing to the terms of service and privacy policy.
+ * Last Updated: 11/06/2024  by Will Rayner
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Signup</title>
+    <!-- CSS files -->
     <link rel="stylesheet" href="/styles/register.css">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- SweetAlert2 Library -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
+
 <body>
-   
+    <!-- Main content of the page -->
     <main id="site-main">
         <div class="container">
-            
+            <!-- Registration form -->
             <form method="POST" action="/register" id="add_user">
                 <div class="form-title text-center">
                     <h2 class="text-dark">Create Family Account</h2>
@@ -21,42 +33,43 @@
                 <div class="new_user">
                     <div class="form-group">
                         <label for="householdName">Household Name</label>
-                        <input type="text" name="householdName" id="householdName" value="" placeholder="James">
+                        <input type="text" class="form-control" name="householdName" id="householdName" placeholder="James" required>
                     </div>
                     <div class="form-group">
                         <label for="mobileNumber">Family Phone Number</label>
-                        <input type="text" name="mobileNumber" id="mobileNumber" value="" placeholder="012345678">
+                        <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" placeholder="012345678" required>
                     </div>
                     <div class="form-group">
                         <label for="familyPassword">Family Password</label>
-                        <input type="text" name="familyPassword" id="familyPassword" value="" placeholder="">
+                        <input type="password" class="form-control" name="familyPassword" id="familyPassword" placeholder="Password" required>
                     </div>
-                    <div class="form-group small-print">
-                        <div class="radio inline">
-                            <input type="radio" id="sms" name="sms" value="">
-                        </div>
-                        <label for="sms">I agree with receiving SMS regarding my consultations*</label>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="sms" name="sms">
+                        <label class="form-check-label" for="sms">I agree with receiving SMS regarding my consultations*</label>
                     </div>
-                    <div class="form-group small-print">
-                        <div class="radio inline">
-                            <input type="radio" id="terms" name="terms" value="">
-                        </div>
-                        <label for="terms">I agree to the Terms of Service and Privacy Policy and certify to be over the age of 18*</label>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                        <label class="form-check-label" for="terms">I agree to the Terms of Service and Privacy Policy and certify to be over the age of 18*</label>
                     </div>
-                    <div class="form-group button-group">
-                        <button type="submit" class="btn update">Create Account</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
                     </div>
-                    <p class="form__text">
+                    <p class="text-center">
                         <a class="form__link" href="/login" id="linkLogin">Already have an account? Sign In</a>
                     </p>
                 </div>
             </form>
         </div>
+        <!-- Toast notification for successful registration -->
         <div id="toast" class="toast" style="display: none;">Registration successful!</div>
     </main>
 
+    <!-- JavaScript files -->
+    <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS for registration -->
     <script src="/js/register.js"></script>
 </body>
+
 </html>

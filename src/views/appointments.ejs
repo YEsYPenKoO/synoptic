@@ -1,14 +1,16 @@
 <!--
  * Author: Will Rayner
  * Description: This page displays the user's current and upcoming appointments with options to cancel or book appointments.
- * Last Updated: [11/06/24] by Will Rayner
+ * Last Updated: [11/06/24] by Ed Turner
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Setting the character encoding, viewport, and title of the page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linking the CSS stylesheets for navbar and appointments -->
     <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="/styles/appointments.css">
     <title>Your Appointments</title>
@@ -30,8 +32,8 @@
                 <% appointments.forEach(appointment => { %>
                     <li class="appointment-item">
                         <div class="appointment-details">
-                            <strong class="appointment-type"><%= appointment.appointment_type %></strong> - 
-                            <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
+                            <strong class="appointment-type"><%= appointment.appointment_type %></strong> -
+                            <%= appointment.appointment_date %> at <%= appointment.appointment_time %>
                             (Status: <%= appointment.status %>)
                             <p class="appointment-notes">Notes: <%= appointment.notes %></p>
                         </div>
@@ -52,8 +54,8 @@
                 <% upcomingAppointments.forEach(appointment => { %>
                     <li class="upcoming-appointment-item">
                         <div class="upcoming-appointment-details">
-                            <strong class="upcoming-appointment-type"><%= appointment.appointment_type %></strong> - 
-                            <%= appointment.appointment_date %> at <%= appointment.appointment_time %> 
+                            <strong class="upcoming-appointment-type"><%= appointment.appointment_type %></strong> -
+                            <%= appointment.appointment_date %> at <%= appointment.appointment_time %>
                             (Status: <%= appointment.status %>)
                             <p class="upcoming-appointment-notes">Notes: <%= appointment.notes %></p>
                         </div>
@@ -66,7 +68,7 @@
         </ul>
     </div>
 
-    <!-- JavaScript files -->
+    <!-- JavaScript file for navbar functionality -->
     <script src="/js/navbar.js"></script>
 </body>
 </html>

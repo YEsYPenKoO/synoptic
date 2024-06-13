@@ -81,17 +81,9 @@
  }
  
  /* Small print styles */
-<<<<<<< HEAD
- .form-group.small-print label {
-     font-size: 0.75rem;
-     display: flex;
-     align-items: center;
-     margin-bottom: 0; 
-=======
  .form-group.small-print {
      display: flex;
      align-items: center;
->>>>>>> 83a77892ea96f6736240c163e070d3720f0a5a90
  }
  
  .form-group.small-print label {
@@ -111,13 +103,8 @@
      margin-right: 5px;
  }
  
-<<<<<<< HEAD
- .form-group .radio.inline label {
-     margin-right: 10px; 
-=======
  .form-group.small-print .radio.inline label {
      margin-right: 0; /* Removed margin */
->>>>>>> 83a77892ea96f6736240c163e070d3720f0a5a90
  }
  
  /* Button styles */
@@ -131,12 +118,7 @@
      background: var(--primary-color);
      color: var(--background-color);
      cursor: pointer;
-<<<<<<< HEAD
-     transition: background 0.3s ease;
-     margin-top: 15px; 
-=======
      margin-top: 15px; /* Reduced margin */
->>>>>>> 83a77892ea96f6736240c163e070d3720f0a5a90
  }
  
  button.btn.update:hover {
@@ -175,31 +157,6 @@
  }
  
  /* Toast message */
-<<<<<<< HEAD
-.toast {
-    width: 240px;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    background-color: #f44336; 
-    color: white;
-    padding: 6px; 
-    font-size: 0.75rem; 
-    text-align: center;
-    border-radius: var(--border-radius);
-}
-
-
-.swal2-popup {
-    width: 240px; 
-    font-size: 0.875rem; 
-    padding: 10px; 
-}
-
- 
-=======
  .toast {
      width: 240px; /* Reduced width */
      position: fixed;
@@ -222,4 +179,3 @@
      padding: 10px; /* Reduced padding */
  }
  
->>>>>>> 83a77892ea96f6736240c163e070d3720f0a5a90

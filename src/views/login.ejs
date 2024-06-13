@@ -1,59 +1,66 @@
+<!-- 
+ * Author: Abi Osifeso
+ * Description: This page provides a login form for users and admins.
+ * It includes fields for phone number and password, and a checkbox for showing the password.
+ * Last Updated: [12/06/2024] by Will Rayner
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Setting the character encoding, viewport and title of the page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <!-- Linking the CSS stylesheet for the login page -->
     <link rel="stylesheet" href="/styles/login.css">
+    <!-- Linking the JavaScript file for the login page -->
+    <script src="/js/login.js"></script>
 </head>
 <body>
+    <!-- Main container for the login form -->
     <div class="login-container">
         <div class="login-form">
             <h2>Welcome</h2>
+            <!-- Displaying an error message if there is one -->
             <% if (errorMessage) { %>
                 <p class="error-message"><%= errorMessage %></p>
             <% } %>
+            <!-- Form for user login -->
             <form id="form_id" method="post" action="/login">
+                <!-- Input field for the phone number -->
                 <div class="input-group">
                     <label for="phone">Enter your phone number*</label>
                     <input type="text" name="mobileNumber" id="phone" placeholder="Type your phone number" required />
                 </div>
+                <!-- Input field for the password -->
                 <div class="input-group">
                     <label for="password">Enter your password*</label>
                     <input type="password" name="familyPassword" id="password" placeholder="Type your password" required />
                 </div>
+                <!-- Checkbox for showing the password -->
                 <div class="input-group show-password">
                     <label for="show-password">Click here to show your password</label>
                     <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
                 </div>
+                <!-- Submit button for the form -->
                 <div class="btn_wrapper">
                     <button class="btn_login" type="submit">Continue</button>
                 </div>
             </form>
             
+            <!-- Form for admin login -->
             <form id="admin_form_id" method="get" action="/admin">
                 <div class="btn_wrapper">
                     <button class="btn_login" type="submit">Admin Login</button>
                 </div>
             </form>
 
-
-        <div class="signup-link">
-            <p>Haven't created a household? <a href="/register">Sign Up</a></p>
-        </div>  
+            <!-- Link to the registration page -->
+            <div class="signup-link">
+                <p>Haven't created a household? <a href="/register">Sign Up</a></p>
+            </div>  
         </div>
     </div>
 </body>
 </html>
-
-<script> 
-function togglePasswordVisibility() {
-    const passwordField = document.getElementById('password');
-    const showPasswordCheckbox = document.getElementById('show-password');
-    
-    if (showPasswordCheckbox.checked) {
-        passwordField.type = 'text';
-    } else {
-        passwordField.type = 'password';
-    }
-}</script>

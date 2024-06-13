@@ -1,3 +1,6 @@
+/* CSS for prescription and vaccination tabs */
+/* Author: Will Rayner */
+
 @import 'variables.css';
 
 body {
@@ -34,7 +37,8 @@ body {
     border-collapse: collapse;
 }
 
-.prescription-tab th, .prescription-tab td {
+.prescription-tab th,
+.prescription-tab td {
     padding: 10px;
     border-bottom: 1px solid var(--table-border-color);
 }
@@ -85,7 +89,8 @@ body {
     border-collapse: collapse;
 }
 
-.vaccination-tab th, .vaccination-tab td {
+.vaccination-tab th,
+.vaccination-tab td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
